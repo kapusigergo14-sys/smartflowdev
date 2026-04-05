@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "neil-gilbert",
+    "industry": "Legal · UK",
+    "filename": "neil-gilbert.webp",
+    "template": "A",
+    "beforeSrc": "/portfolio/neil-gilbert-before.webp",
+    "afterSrc": "/portfolio/neil-gilbert-after.webp"
+  },
+  {
+    "slug": "girvan-dental",
+    "industry": "Dental · UK",
+    "filename": "girvan-dental.webp",
+    "template": "B",
+    "beforeSrc": "/portfolio/girvan-dental-before.webp",
+    "afterSrc": "/portfolio/girvan-dental-after.webp"
+  },
+  {
+    "slug": "hunter-french",
+    "industry": "Real Estate · AU",
+    "filename": "hunter-french.webp",
+    "template": "C",
+    "beforeSrc": "/portfolio/hunter-french-before.webp",
+    "afterSrc": "/portfolio/hunter-french-after.webp"
+  },
+  {
+    "slug": "nuova-plumbing",
+    "industry": "Plumbing · USA",
+    "filename": "nuova-plumbing.webp",
+    "template": "D",
+    "beforeSrc": "/portfolio/nuova-plumbing-before.webp",
+    "afterSrc": "/portfolio/nuova-plumbing-after.webp"
+  },
+  {
+    "slug": "burnbank-roofing",
+    "industry": "Roofing · UK",
+    "filename": "burnbank-roofing.webp",
+    "template": "E",
+    "beforeSrc": "/portfolio/burnbank-roofing-before.webp",
+    "afterSrc": "/portfolio/burnbank-roofing-after.webp"
+  },
+  {
+    "slug": "garage-service",
+    "industry": "Auto · UK",
+    "filename": "garage-service.webp",
+    "template": "F",
+    "beforeSrc": "/portfolio/garage-service-before.webp",
+    "afterSrc": "/portfolio/garage-service-after.webp"
+  }
+]

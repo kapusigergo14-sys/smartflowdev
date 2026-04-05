@@ -1,0 +1,24 @@
+.wrap {
+  position: relative;
+  height: 2px;
+  width: 100%;
+  overflow: hidden;
+  background: var(--border-color);
+  opacity: 0.6;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, var(--accent-green) 50%, transparent 100%);
+  animation: sweep 4s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes sweep {
+  0% { left: -40%; }
+  100% { left: 100%; }
+}
