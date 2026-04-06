@@ -18,6 +18,7 @@ export async function submitContact(prevState: ContactResult | null, formData: F
   const name = String(formData.get('name') || '').trim().slice(0, 100);
   const email = String(formData.get('email') || '').trim().slice(0, 200);
   const website = String(formData.get('website') || '').trim().slice(0, 300);
+  const style = String(formData.get('style') || '').trim().slice(0, 100);
   const message = String(formData.get('message') || '').trim().slice(0, 2000);
 
   if (!name) return { ok: false, error: 'Name required' };
@@ -37,6 +38,7 @@ export async function submitContact(prevState: ContactResult | null, formData: F
       <div style="margin-bottom: 8px;"><span style="color: #8b949e;">name:</span> ${esc(name)}</div>
       <div style="margin-bottom: 8px;"><span style="color: #8b949e;">email:</span> ${esc(email)}</div>
       <div style="margin-bottom: 8px;"><span style="color: #8b949e;">website:</span> ${esc(website) || '-'}</div>
+      <div style="margin-bottom: 8px;"><span style="color: #8b949e;">style:</span> <span style="color: #39d353; font-weight: 600;">${esc(style) || 'Not sure yet'}</span></div>
       <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #30363d; white-space: pre-wrap;">${esc(message)}</div>
     </div>
   `;
