@@ -41,21 +41,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Scan lines overlay across the entire page */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 100;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent 0,
-    transparent 2px,
-    rgba(0, 0, 0, 0.1) 2px,
-    rgba(0, 0, 0, 0.1) 4px
-  );
-}
+/* Scan lines removed — was distracting on images and cards */
 
 a {
   color: var(--accent-green);
