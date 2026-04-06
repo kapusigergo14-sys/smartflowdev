@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import StyleGallery from '@/components/StyleGallery';
 import BeforeAfterWall from '@/components/BeforeAfterWall';
 import LiveAudit from '@/components/LiveAudit';
 import HowItWorks from '@/components/HowItWorks';
@@ -12,6 +13,8 @@ export default function HomePage() {
   return (
     <main>
       <Hero />
+      <ScanLineDivider />
+      <StyleGallery />
       <ScanLineDivider />
       <BeforeAfterWall />
       <ScanLineDivider />

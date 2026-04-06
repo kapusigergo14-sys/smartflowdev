@@ -10,8 +10,8 @@ export default function Hero() {
         <div className={styles.topbar}>
           <span className={styles.logo}>smartflowdev</span>
           <nav className={styles.topbarLinks}>
+            <a href="#styles">styles</a>
             <a href="#work">work</a>
-            <a href="#audit">audit</a>
             <a href="#pricing">pricing</a>
             <a href="#contact">contact</a>
           </nav>
