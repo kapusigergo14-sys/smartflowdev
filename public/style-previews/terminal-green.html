@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280">
+    <title>smartflowdev — Terminal Green</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: #0d1117;
+            color: #e6edf3;
+            font-size: 14px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* NAV */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            border-bottom: 1px solid #30363d;
+        }
+        .logo {
+            font-size: 16px;
+            font-weight: 700;
+            color: #39d353;
+        }
+        .logo::before { content: '> '; color: #8b949e; }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 13px;
+            color: #8b949e;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+        .nav-links a::before { content: './'; color: #30363d; }
+        .nav-links a:hover { color: #39d353; }
+        .nav-cta {
+            border: 1px solid #39d353;
+            color: #39d353 !important;
+            padding: 8px 20px;
+            font-weight: 500;
+        }
+        .nav-cta::before { content: '' !important; }
+        .nav-cta:hover { background: rgba(57,211,83,0.1); }
+
+        /* HERO */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 64px 40px;
+            gap: 48px;
+        }
+        .hero-text .prompt {
+            color: #8b949e;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+        .hero-text .prompt span { color: #39d353; }
+        .hero-text h1 {
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #e6edf3;
+        }
+        .hero-text h1 span { color: #39d353; }
+        .hero-text p {
+            font-size: 14px;
+            color: #8b949e;
+            margin-bottom: 28px;
+            line-height: 1.8;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: #39d353;
+            color: #0d1117;
+            padding: 12px 28px;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            transition: background 0.2s;
+        }
+        .hero-cta:hover { background: #2ea043; }
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 28px;
+        }
+        .hero-stats .stat {
+            font-size: 12px;
+            color: #8b949e;
+        }
+        .hero-stats .stat strong {
+            color: #39d353;
+            font-weight: 700;
+        }
+
+        /* TERMINAL WINDOW */
+        .terminal {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .terminal-titlebar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: #0d1117;
+            border-bottom: 1px solid #30363d;
+        }
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .td-red { background: #f85149; }
+        .td-yellow { background: #d29922; }
+        .td-green { background: #39d353; }
+        .terminal-title {
+            margin-left: 8px;
+            font-size: 12px;
+            color: #8b949e;
+        }
+        .terminal-body {
+            padding: 20px;
+            font-size: 13px;
+            line-height: 2;
+        }
+        .terminal-body .line { color: #8b949e; }
+        .terminal-body .cmd { color: #39d353; }
+        .terminal-body .flag { color: #79c0ff; }
+        .terminal-body .str { color: #a5d6ff; }
+        .terminal-body .comment { color: #484f58; }
+        .terminal-body .success { color: #39d353; }
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background: #39d353;
+            animation: blink 1s step-end infinite;
+            vertical-align: text-bottom;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* FEATURES */
+        .features {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px 64px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .feature-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 28px 24px;
+            transition: border-color 0.2s;
+        }
+        .feature-card:hover { border-color: #39d353; }
+        .feature-card .card-header {
+            font-size: 12px;
+            color: #484f58;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .feature-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #e6edf3;
+        }
+        .feature-card h3::before {
+            content: '# ';
+            color: #39d353;
+        }
+        .feature-card p {
+            font-size: 13px;
+            color: #8b949e;
+            line-height: 1.7;
+        }
+        .feature-card .tag {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 4px 10px;
+            background: rgba(57,211,83,0.1);
+            border: 1px solid rgba(57,211,83,0.2);
+            border-radius: 4px;
+            font-size: 11px;
+            color: #39d353;
+        }
+
+        /* FOOTER */
+        footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 24px 40px;
+            border-top: 1px solid #30363d;
+            font-size: 12px;
+            color: #484f58;
+        }
+        footer span { color: #39d353; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">smartflowdev</div>
+        <ul class="nav-links">
+            <li><a href="#">services</a></li>
+            <li><a href="#">work</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">pricing</a></li>
+            <li><a href="#" class="nav-cta">get_started</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-text">
+            <div class="prompt">geri@smartflowdev <span>~/projects</span> $</div>
+            <h1>We build <span>websites</span> that ship fast.</h1>
+            <p>Modern websites for small businesses.<br>$1,500 flat. 7-day delivery.<br>You own the code. All of it.</p>
+            <a href="#" class="hero-cta">./start-project</a>
+            <div class="hero-stats">
+                <div class="stat"><strong>140+</strong> deployed</div>
+                <div class="stat"><strong>$1,500</strong> flat</div>
+                <div class="stat"><strong>7d</strong> turnaround</div>
+            </div>
+        </div>
+        <div class="terminal">
+            <div class="terminal-titlebar">
+                <span class="terminal-dot td-red"></span>
+                <span class="terminal-dot td-yellow"></span>
+                <span class="terminal-dot td-green"></span>
+                <span class="terminal-title">smartflowdev ~ zsh</span>
+            </div>
+            <div class="terminal-body">
+                <div class="line"><span class="cmd">$</span> npx create-smartflow <span class="flag">--name</span> <span class="str">"your-business"</span></div>
+                <div class="line"><span class="comment">// Scaffolding project...</span></div>
+                <div class="line"><span class="success">+</span> Custom design <span class="comment">......... done</span></div>
+                <div class="line"><span class="success">+</span> Responsive layout <span class="comment">... done</span></div>
+                <div class="line"><span class="success">+</span> SEO optimization <span class="comment">.... done</span></div>
+                <div class="line"><span class="success">+</span> Performance tuning <span class="comment">.. done</span></div>
+                <div class="line"><span class="success">+</span> Deployment setup <span class="comment">.... done</span></div>
+                <div class="line">&nbsp;</div>
+                <div class="line"><span class="success">Ready in 7 days.</span> <span class="cursor"></span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="card-header">01 / feature</div>
+            <h3>Custom Design</h3>
+            <p>Every site handcrafted from scratch. No templates, no WordPress, no page builders. Clean code only.</p>
+            <span class="tag">--custom</span>
+        </div>
+        <div class="feature-card">
+            <div class="card-header">02 / feature</div>
+            <h3>Fast Delivery</h3>
+            <p>$1,500 flat rate. 7-day turnaround. From git init to production deploy in one sprint.</p>
+            <span class="tag">--fast</span>
+        </div>
+        <div class="feature-card">
+            <div class="card-header">03 / feature</div>
+            <h3>You Own Everything</h3>
+            <p>Full repo access. All code, all assets, all rights. git clone and host anywhere you want.</p>
+            <span class="tag">--yours</span>
+        </div>
+    </section>
+
+    <footer>
+        <p><span>&gt;</span> smartflowdev.com</p>
+    </footer>
+</body>
+</html>

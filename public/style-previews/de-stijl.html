@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280">
+    <title>smartflowdev — De Stijl</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background: #FFFFFF;
+            color: #000000;
+            font-size: 16px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* NAV */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            height: 64px;
+            border-bottom: 4px solid #000;
+            background: #fff;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            list-style: none;
+        }
+        .nav-links li {
+            border-left: 3px solid #000;
+        }
+        .nav-links a {
+            display: block;
+            padding: 8px 20px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .nav-links a:hover { background: #FFFF00; }
+        .nav-cta {
+            background: #FF0000 !important;
+            color: #fff !important;
+        }
+        .nav-cta:hover { background: #cc0000 !important; }
+
+        /* HERO MONDRIAN GRID */
+        .hero {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr 1fr;
+            grid-template-rows: 280px 140px;
+            border-bottom: 4px solid #000;
+            min-height: auto;
+        }
+        .hero-main {
+            grid-row: 1 / 3;
+            background: #FFFFFF;
+            border-right: 4px solid #000;
+            padding: 56px 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero-main h1 {
+            font-size: 52px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero-main p {
+            font-size: 16px;
+            line-height: 1.7;
+            max-width: 480px;
+            margin-bottom: 28px;
+            color: #333;
+        }
+        .hero-btn {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 14px 36px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            transition: background 0.2s;
+        }
+        .hero-btn:hover { background: #FF0000; }
+        .hero-red {
+            background: #FF0000;
+            border-right: 4px solid #000;
+            border-bottom: 4px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-red span {
+            color: #fff;
+            font-weight: 700;
+            font-size: 36px;
+            letter-spacing: 0.05em;
+        }
+        .hero-blue {
+            background: #0000FF;
+            border-bottom: 4px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-blue span {
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .hero-yellow {
+            background: #FFFF00;
+            border-right: 4px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-yellow span {
+            font-weight: 700;
+            font-size: 28px;
+            color: #000;
+        }
+        .hero-white {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+        .hero-white span {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+            color: #808080;
+            text-align: center;
+        }
+
+        /* FEATURES */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 4px solid #000;
+        }
+        .feature-card {
+            padding: 36px 28px;
+            border-right: 4px solid #000;
+            position: relative;
+        }
+        .feature-card:last-child { border-right: none; }
+        .feature-card::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 4px;
+            margin-bottom: 20px;
+        }
+        .feature-card:nth-child(1)::before { background: #FF0000; }
+        .feature-card:nth-child(2)::before { background: #0000FF; }
+        .feature-card:nth-child(3)::before { background: #FFFF00; }
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+        }
+        .feature-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        /* FOOTER */
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 40px;
+            background: #000;
+            color: #fff;
+        }
+        .footer-logo {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+        .footer-text {
+            font-size: 12px;
+            color: #808080;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .footer-blocks {
+            display: flex;
+            gap: 4px;
+        }
+        .footer-blocks span {
+            width: 16px;
+            height: 16px;
+            display: block;
+        }
+        .fb-r { background: #FF0000; }
+        .fb-b { background: #0000FF; }
+        .fb-y { background: #FFFF00; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">smartflowdev</div>
+        <ul class="nav-links">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#" class="nav-cta">Start</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-main">
+            <h1>Form Follows Function</h1>
+            <p>Modern websites for small businesses. $1,500 flat. 7-day delivery. Clean design, honest code, complete ownership.</p>
+            <a href="#" class="hero-btn">Start Your Project</a>
+        </div>
+        <div class="hero-red"><span>$1.5K</span></div>
+        <div class="hero-blue"><span>7 Day<br>Delivery</span></div>
+        <div class="hero-yellow"><span>140+</span></div>
+        <div class="hero-white"><span>Sites<br>Delivered</span></div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>Custom Design</h3>
+            <p>Every website built from a blank canvas. No templates, no page builders. Your brand identity, precisely rendered in code.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Fast Delivery</h3>
+            <p>$1,500 flat rate. 7-day turnaround. From brief to launch in one week, with no compromises on quality or craft.</p>
+        </div>
+        <div class="feature-card">
+            <h3>You Own Everything</h3>
+            <p>Complete ownership of all code, design, and assets. No recurring fees, no vendor lock-in. Freedom by design.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">smartflowdev</div>
+        <div class="footer-blocks">
+            <span class="fb-r"></span>
+            <span class="fb-b"></span>
+            <span class="fb-y"></span>
+        </div>
+        <div class="footer-text">smartflowdev.com</div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>smartflowdev — Swiss Modern</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #ffffff;
+    --black: #1a1a1a;
+    --red: #ff3300;
+    --light-grey: #f5f5f5;
+    --medium-grey: #cccccc;
+    --dark-grey: #333333;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Archivo', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* NAV */
+  nav {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--light-grey);
+  }
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-logo {
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--black);
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-logo .dot {
+    width: 10px;
+    height: 10px;
+    background: var(--red);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .nav-links a {
+    color: var(--dark-grey);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--red); }
+  .nav-cta {
+    background: var(--red);
+    color: var(--white);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 51, 0, 0.25);
+  }
+
+  /* HERO */
+  .hero {
+    padding: 100px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border: 1px solid var(--medium-grey);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-family: 'Nunito', sans-serif;
+    color: var(--dark-grey);
+    margin-bottom: 28px;
+  }
+  .hero-badge .indicator {
+    width: 6px;
+    height: 6px;
+    background: var(--red);
+    border-radius: 50%;
+  }
+  .hero h1 {
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    color: var(--black);
+  }
+  .hero h1 .accent { color: var(--red); }
+  .hero-sub {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 480px;
+    margin-bottom: 36px;
+    line-height: 1.7;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .btn-primary {
+    background: var(--red);
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 51, 0, 0.3);
+  }
+  .btn-secondary {
+    color: var(--dark-grey);
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 1.5px solid var(--medium-grey);
+    transition: border-color 0.2s;
+    font-family: inherit;
+  }
+  .btn-secondary:hover { border-color: var(--black); }
+
+  /* HERO VISUAL */
+  .hero-visual {
+    position: relative;
+    height: 480px;
+  }
+  .geo-circle {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 1.5px solid var(--medium-grey);
+    top: 20px;
+    right: 0;
+  }
+  .geo-rect {
+    position: absolute;
+    width: 260px;
+    height: 340px;
+    background: var(--light-grey);
+    top: 60px;
+    right: 80px;
+  }
+  .geo-red {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: var(--red);
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+  }
+  .geo-line {
+    position: absolute;
+    width: 200px;
+    height: 1.5px;
+    background: var(--black);
+    top: 240px;
+    right: 220px;
+    transform: rotate(-30deg);
+  }
+
+  /* GRID LINES (visible background) */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background: var(--light-grey);
+    pointer-events: none;
+  }
+
+  /* FEATURES */
+  .features {
+    padding: 80px 0;
+    border-top: 1px solid var(--light-grey);
+  }
+  .features-header {
+    margin-bottom: 56px;
+    max-width: 520px;
+  }
+  .features-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+  .features-title {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .features-sub {
+    font-family: 'Nunito', sans-serif;
+    color: #888;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    gap: 24px;
+  }
+  .feature-card {
+    background: var(--light-grey);
+    border-radius: 50px;
+    padding: 36px 28px;
+    position: relative;
+    transition: transform 0.2s;
+  }
+  .feature-card:hover { transform: translateY(-3px); }
+  .feature-card:nth-child(2) {
+    background: var(--black);
+    color: var(--white);
+  }
+  .feature-card:nth-child(2) .fc-desc { color: rgba(255,255,255,0.6); }
+  .fc-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--red);
+    margin-bottom: 28px;
+  }
+  .fc-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+  .fc-desc {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.88rem;
+    color: #888;
+    line-height: 1.55;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 0;
+    border-top: 1px solid var(--light-grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .footer-brand {
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .footer-brand .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+  }
+  .footer-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.8rem;
+    color: #999;
+  }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo"><span class="dot"></span>smartflowdev</a>
+      <ul class="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Pricing</a></li>
+      </ul>
+      <a href="#" class="nav-cta">Get Started</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge"><span class="indicator"></span> Web Design Studio</div>
+          <h1>Modern websites<br>built with <span class="accent">precision.</span></h1>
+          <p class="hero-sub">Clean, fast, conversion-ready websites for small businesses. Flat pricing, 7-day delivery, no retainers.</p>
+          <div class="hero-actions">
+            <a href="#" class="btn-primary">Start a Project</a>
+            <a href="#" class="btn-secondary">View Work</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="geo-circle"></div>
+          <div class="geo-rect"></div>
+          <div class="geo-red">SF</div>
+          <div class="geo-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="features-header">
+        <div class="features-tag">What We Do</div>
+        <h2 class="features-title">Websites that work as hard as you do.</h2>
+        <p class="features-sub">Every project includes design, development, SEO, and a 30-day tweak window.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="fc-num">01</div>
+          <div class="fc-title">Custom Design</div>
+          <p class="fc-desc">3 unique concepts tailored to your brand. Pick one, we build it.</p>
+        </div>
+        <div class="feature-card">
+          <div class="fc-num">02</div>
+          <div class="fc-title">Fast Delivery</div>
+          <p class="fc-desc">Homepage + 3 inner pages shipped in 7 days. Modern stack, mobile-first.</p>
+        </div>
+        <div class="feature-card">
+          <div class="fc-num">03</div>
+          <div class="fc-title">Flat Pricing</div>
+          <p class="fc-desc">$1,500 all-in. No surprises, no retainers. You own the code.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="dot"></span>smartflowdev</div>
+      <div class="footer-text">smartflowdev.com — Modern websites for small businesses</div>
+    </div>
+  </footer>
+</body>
+</html>

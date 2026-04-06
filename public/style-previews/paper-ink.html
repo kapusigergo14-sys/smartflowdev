@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280">
+    <title>smartflowdev — Paper & Ink</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Source Serif 4', Georgia, serif;
+            background: #faf9f7;
+            color: #1a1a1a;
+            font-size: 17px;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* NAV */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 24px 40px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-family: 'Source Serif 4', serif;
+            font-size: 14px;
+            color: #1a1a1a;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .nav-links a:hover { color: #c41e3a; }
+        .nav-cta {
+            border: 1px solid #1a1a1a;
+            padding: 8px 20px;
+            transition: all 0.2s;
+        }
+        .nav-cta:hover {
+            background: #1a1a1a;
+            color: #faf9f7 !important;
+        }
+
+        /* HERO */
+        .hero {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 64px 40px 48px;
+        }
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 400;
+            color: #c41e3a;
+            margin-bottom: 32px;
+            font-style: italic;
+        }
+        .hero-divider {
+            border: none;
+            border-top: 1px solid #1a1a1a;
+            margin: 0 0 32px;
+            width: 120px;
+        }
+        .hero-text {
+            columns: 2;
+            column-gap: 48px;
+            column-rule: 1px solid rgba(26,26,26,0.15);
+        }
+        .hero-text p {
+            margin-bottom: 16px;
+            text-align: justify;
+            font-size: 16px;
+            line-height: 1.85;
+        }
+        .drop-cap::first-letter {
+            font-family: 'Cormorant Garamond', serif;
+            float: left;
+            font-size: 72px;
+            line-height: 0.8;
+            padding-right: 8px;
+            padding-top: 4px;
+            color: #c41e3a;
+            font-weight: 700;
+        }
+        .pull-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-style: italic;
+            color: #c41e3a;
+            border-left: 2px solid #c41e3a;
+            padding-left: 20px;
+            margin: 16px 0;
+            line-height: 1.5;
+        }
+
+        /* FEATURES */
+        .features-section {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 40px 48px;
+        }
+        .features-hr {
+            border: none;
+            border-top: 1px solid #1a1a1a;
+            margin-bottom: 40px;
+        }
+        .features-label {
+            font-family: 'Source Serif 4', serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #999;
+            margin-bottom: 32px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+        .feature-card {
+            padding: 32px 28px;
+            border-left: 1px solid rgba(26,26,26,0.15);
+        }
+        .feature-card:first-child { border-left: none; padding-left: 0; }
+        .feature-card:last-child { padding-right: 0; }
+        .feature-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #c41e3a;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .feature-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+        .feature-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+        }
+        .feature-thin-hr {
+            border: none;
+            border-top: 1px solid rgba(26,26,26,0.1);
+            margin: 12px 0 16px;
+            width: 40px;
+        }
+
+        /* FOOTER */
+        footer {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 32px 40px;
+            border-top: 1px solid #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .footer-text {
+            font-size: 13px;
+            color: #999;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">smartflowdev</div>
+        <ul class="nav-links">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#" class="nav-cta">Inquire</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Craft Meets Code</h1>
+        <div class="hero-subtitle">Modern websites for small businesses. $1,500 flat. 7-day delivery.</div>
+        <hr class="hero-divider">
+        <div class="hero-text">
+            <p class="drop-cap">We believe every small business deserves a website that reflects the care and craft they put into their work. At smartflowdev, we design and build modern, performant websites with a flat $1,500 price and deliver in just seven days. No templates, no page builders, no compromises.</p>
+            <div class="pull-quote">"Design is not just what it looks like. Design is how it works."</div>
+            <p>Our process is simple: tell us about your business, and we handle the rest. From custom layouts and responsive design to hosting setup and handoff, everything is included. You own every line of code, every pixel of design. No subscriptions, no lock-in. Just honest work delivered with precision and care.</p>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <hr class="features-hr">
+        <div class="features-label">What We Offer</div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-number">I</div>
+                <h3>Custom Design</h3>
+                <hr class="feature-thin-hr">
+                <p>Every website is a bespoke creation. We study your brand, your audience, and your goals to craft something that is uniquely yours.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-number">II</div>
+                <h3>Fast Delivery</h3>
+                <hr class="feature-thin-hr">
+                <p>$1,500 flat rate with a 7-day turnaround. No drawn-out timelines, no scope creep. Your site goes live in one week.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-number">III</div>
+                <h3>You Own Everything</h3>
+                <hr class="feature-thin-hr">
+                <p>Full ownership of code, design, and content. No monthly fees, no vendor lock-in. Transfer, modify, or host anywhere you choose.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">smartflowdev</div>
+        <div class="footer-text">smartflowdev.com</div>
+    </footer>
+</body>
+</html>

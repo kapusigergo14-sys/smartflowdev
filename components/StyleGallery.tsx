@@ -10,18 +10,18 @@ interface StyleItem {
 }
 
 const ITEMS: StyleItem[] = [
-  { slug: 'swiss-modern',   name: 'Swiss Modern',      desc: 'Clean, minimal, Bauhaus-inspired',          tags: 'law · finance · medical',              src: '/styles/swiss-modern.webp' },
-  { slug: 'flat-corporate', name: 'Flat Corporate',    desc: 'Professional corporate flat design',         tags: 'real estate · insurance · B2B',        src: '/styles/flat-corporate.webp' },
-  { slug: 'luxury-type',    name: 'Luxury Typography', desc: 'Elegant serif-driven editorial layout',      tags: 'dental · hotel · boutique',            src: '/styles/luxury-type.webp' },
-  { slug: 'aurora-ui',      name: 'Aurora',            desc: 'Soft gradients, modern and warm',            tags: 'dental · wellness · spa',              src: '/styles/aurora-ui.webp' },
-  { slug: 'art-nouveau',    name: 'Art Nouveau',       desc: 'Elegant organic flowing forms',              tags: 'bakery · florist · salon',             src: '/styles/art-nouveau.webp' },
-  { slug: 'hero-centric',   name: 'Hero Centric',      desc: 'Bold hero-first, image-driven layout',       tags: 'roofing · construction · auto',        src: '/styles/hero-centric.webp' },
-  { slug: 'conversion',     name: 'Conversion Pro',    desc: 'CTA-heavy, built for lead generation',       tags: 'plumbing · HVAC · electrical',         src: '/styles/conversion.webp' },
-  { slug: 'feature-rich',   name: 'Feature Showcase',  desc: 'Service-rich layout with clear sections',    tags: 'dental · medical · chiropractic',      src: '/styles/feature-rich.webp' },
-  { slug: 'paper-ink',      name: 'Paper & Ink',       desc: 'Warm editorial, newspaper-inspired',          tags: 'law · accounting · consulting',        src: '/styles/paper-ink.webp' },
-  { slug: 'terminal-green', name: 'Terminal Green',    desc: 'Developer-focused dark terminal',             tags: 'tech · dev agency · SaaS',             src: '/styles/terminal-green.webp' },
-  { slug: 'minimalism',     name: 'Minimalism',        desc: 'Ultra-clean whitespace-first design',         tags: 'dental · law · medical',               src: '/styles/minimalism.webp' },
-  { slug: 'neoplastic',     name: 'Neoplastic',        desc: 'Mondrian-inspired geometric blocks',          tags: 'architecture · design · gallery',      src: '/styles/neoplastic.webp' },
+  { slug: 'swiss-modern',     name: 'Swiss Modern',        desc: 'Clean, precise, Bauhaus-inspired',           tags: 'law · finance · medical',              src: '/styles/swiss-modern.webp' },
+  { slug: 'luxury-type',      name: 'Luxury Typography',   desc: 'Elegant serif, champagne gold accents',      tags: 'dental · hotel · boutique',            src: '/styles/luxury-type.webp' },
+  { slug: 'aurora-ui',        name: 'Aurora',              desc: 'Vibrant gradients, modern warmth',            tags: 'dental · wellness · spa',              src: '/styles/aurora-ui.webp' },
+  { slug: 'art-nouveau',      name: 'Art Nouveau',         desc: 'Organic flowing forms, nature-inspired',     tags: 'bakery · florist · salon',             src: '/styles/art-nouveau.webp' },
+  { slug: 'flat-corporate',   name: 'Flat Corporate',      desc: 'Professional blue, sharp & clean',           tags: 'real estate · insurance · B2B',        src: '/styles/flat-corporate.webp' },
+  { slug: 'hero-centric',     name: 'Hero Centric',        desc: 'Bold dark hero, high-contrast CTAs',         tags: 'roofing · construction · auto',        src: '/styles/hero-centric.webp' },
+  { slug: 'conversion-pro',   name: 'Conversion Pro',      desc: 'CTA-focused, built to capture leads',        tags: 'plumbing · HVAC · electrical',         src: '/styles/conversion-pro.webp' },
+  { slug: 'feature-showcase', name: 'Feature Showcase',    desc: 'Service-rich grid with clear sections',      tags: 'dental · medical · chiropractic',      src: '/styles/feature-showcase.webp' },
+  { slug: 'paper-ink',        name: 'Paper & Ink',         desc: 'Warm editorial, newspaper-inspired',         tags: 'law · accounting · consulting',        src: '/styles/paper-ink.webp' },
+  { slug: 'minimalist-serif', name: 'Minimalist Serif',    desc: 'Premium airy layout, italic headlines',      tags: 'dental · law · medical',               src: '/styles/minimalist-serif.webp' },
+  { slug: 'de-stijl',         name: 'De Stijl',            desc: 'Mondrian-inspired geometric blocks',         tags: 'architecture · design · gallery',      src: '/styles/de-stijl.webp' },
+  { slug: 'terminal-green',   name: 'Terminal Green',      desc: 'Developer-focused dark terminal',            tags: 'tech · dev agency · SaaS',             src: '/styles/terminal-green.webp' },
 ];
 
 export default function StyleGallery() {

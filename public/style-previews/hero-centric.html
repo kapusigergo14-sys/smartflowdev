@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280">
+    <title>smartflowdev — Hero Centric</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #0f172a;
+            color: #fff;
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* NAV */
+        nav {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 40px;
+            z-index: 10;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+        }
+        .logo span { color: #3b82f6; }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #fff; }
+        .nav-cta {
+            background: #3b82f6;
+            color: #fff !important;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .nav-cta:hover { background: #2563eb; }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 40px 80px;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(59,130,246,0.1);
+            border: 1px solid rgba(59,130,246,0.2);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #93c5fd;
+            margin-bottom: 32px;
+        }
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            max-width: 800px;
+            margin-bottom: 24px;
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero > p {
+            font-size: 19px;
+            color: rgba(255,255,255,0.5);
+            max-width: 520px;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: #3b82f6;
+            color: #fff;
+            padding: 18px 48px;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 48px;
+            box-shadow: 0 0 40px rgba(59,130,246,0.3), 0 0 80px rgba(59,130,246,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 60px rgba(59,130,246,0.4), 0 0 120px rgba(59,130,246,0.15);
+        }
+
+        /* STATS */
+        .stats-row {
+            display: flex;
+            gap: 64px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .stat-value span { color: #3b82f6; }
+        .stat-label {
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* FEATURES */
+        .features {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 72px 40px 60px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 32px 28px;
+            text-align: center;
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .feature-card:hover {
+            border-color: rgba(59,130,246,0.2);
+            background: rgba(59,130,246,0.04);
+        }
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 20px;
+            background: rgba(59,130,246,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .feature-icon svg { width: 24px; height: 24px; stroke: #3b82f6; fill: none; stroke-width: 2; }
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 32px 40px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 13px;
+            color: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">smart<span>flow</span>dev</div>
+        <ul class="nav-links">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#" class="nav-cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Now accepting new clients for April</div>
+        <h1>Build Your Website in <span>7 Days</span></h1>
+        <p>Modern websites for small businesses. $1,500 flat. Professional design, fast delivery, full ownership.</p>
+        <a href="#" class="hero-cta">Start Your Project</a>
+        <div class="stats-row">
+            <div class="stat">
+                <div class="stat-value">140<span>+</span></div>
+                <div class="stat-label">Sites Built</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value"><span>$</span>1,500</div>
+                <div class="stat-label">Flat Rate</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">7 <span>Days</span></div>
+                <div class="stat-label">Delivery</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Custom Design</h3>
+            <p>Every site designed from scratch. No templates, no compromises. Built around your brand.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Fast Delivery</h3>
+            <p>$1,500 flat rate with guaranteed 7-day delivery. Your website goes live in one week.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>You Own Everything</h3>
+            <p>Complete ownership of code and design. No subscriptions, no lock-in. It's 100% yours.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>smartflowdev.com</p>
+    </footer>
+</body>
+</html>

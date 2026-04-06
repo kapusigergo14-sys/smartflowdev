@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>smartflowdev — Luxury Typography</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --jet: #0A0A0A;
+    --white: #FFFFFF;
+    --gold: #D4AF37;
+    --charcoal: #333333;
+    --platinum: #E5E4E2;
+    --ivory: #FAF0E6;
+    --blush: #F5E6E0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Playfair Display', serif;
+    background: var(--jet);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* NAV */
+  nav {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-logo {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+  .nav-logo .gold { color: var(--gold); }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .nav-links a {
+    color: var(--platinum);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    padding: 10px 28px;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover {
+    background: var(--gold);
+    color: var(--jet);
+  }
+
+  /* HERO */
+  .hero {
+    padding: 100px 0 80px;
+    text-align: center;
+    position: relative;
+  }
+  .hero-label {
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 32px;
+  }
+  .hero h1 {
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -4px;
+    margin-bottom: 16px;
+    color: var(--white);
+  }
+  .hero .outline-text {
+    -webkit-text-stroke: 1.5px var(--platinum);
+    color: transparent;
+  }
+  .hero .gold-text {
+    color: var(--gold);
+    font-style: italic;
+    font-family: 'Cormorant', serif;
+    font-weight: 300;
+    font-size: 0.75em;
+    letter-spacing: 2px;
+  }
+  .hero-sub {
+    font-family: 'Cormorant', serif;
+    font-size: 1.25rem;
+    color: var(--platinum);
+    max-width: 560px;
+    margin: 36px auto 44px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+  .btn-gold {
+    background: var(--gold);
+    color: var(--jet);
+    padding: 16px 40px;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-gold:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(212, 175, 55, 0.3);
+  }
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,0.2);
+    color: var(--white);
+    padding: 16px 36px;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    transition: border-color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); }
+
+  /* DIVIDER */
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto;
+    opacity: 0.5;
+  }
+
+  /* FEATURES */
+  .features {
+    padding: 80px 0;
+  }
+  .features-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .features-tag {
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: 2px;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+  }
+  .features-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.15;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+  }
+  .feature-card {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 0.5rem;
+    padding: 40px 32px;
+    transition: border-color 0.2s;
+  }
+  .feature-card:hover { border-color: var(--gold); }
+  .feature-card:nth-child(2) {
+    background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.02));
+    border-color: rgba(212,175,55,0.15);
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .fc-num {
+    font-family: 'Cormorant', serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  .fc-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+  }
+  .fc-desc {
+    font-family: 'Cormorant', serif;
+    font-size: 1rem;
+    color: var(--platinum);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-brand {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .footer-brand .gold { color: var(--gold); }
+  .footer-text {
+    font-family: 'Cormorant', serif;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.35);
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">smart<span class="gold">flow</span>dev</a>
+      <ul class="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <a href="#" class="nav-cta">Get Started</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-label">Web Design Studio</div>
+      <h1>
+        <span class="outline-text">Websites</span><br>
+        <span class="gold-text">crafted with</span><br>
+        Purpose.
+      </h1>
+      <p class="hero-sub">Elegant, conversion-ready websites for businesses that value craft. Flat pricing, meticulous attention to detail, delivered in days.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-gold">Begin Your Project</a>
+        <a href="#" class="btn-outline">View Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="features">
+    <div class="container">
+      <div class="features-header">
+        <div class="features-tag">Our Approach</div>
+        <h2 class="features-title">Where type meets intention.</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="fc-num">Chapter I</div>
+          <div class="fc-title">Bespoke Design</div>
+          <p class="fc-desc">Three unique concepts, each one tailored to your brand's voice and audience.</p>
+        </div>
+        <div class="feature-card">
+          <div class="fc-num">Chapter II</div>
+          <div class="fc-title">7-Day Delivery.<br>No Compromises.</div>
+          <p class="fc-desc">Homepage, services, about, and contact pages — built on a modern stack, optimized for mobile, and shipped within one week. Your investment: $1,500 flat.</p>
+        </div>
+        <div class="feature-card">
+          <div class="fc-num">Chapter III</div>
+          <div class="fc-title">You Own Everything</div>
+          <p class="fc-desc">Full source code, hosting handoff, 30 days of complimentary refinements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">smart<span class="gold">flow</span>dev</div>
+      <div class="footer-text">smartflowdev.com — Websites crafted with purpose</div>
+    </div>
+  </footer>
+</body>
+</html>

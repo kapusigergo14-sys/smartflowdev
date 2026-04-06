@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280">
+    <title>smartflowdev — Conversion Pro</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* NAV */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 40px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .logo span { color: #22C55E; }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a { font-size: 14px; color: #666; font-weight: 500; }
+        .nav-links a:hover { color: #1a1a1a; }
+        .nav-cta {
+            background: #22C55E;
+            color: #fff !important;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .nav-cta:hover { background: #16a34a; }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 48px 40px 40px;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .urgency-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #FFFBEB;
+            border: 1px solid #FDE68A;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #92400E;
+            margin-bottom: 24px;
+        }
+        .urgency-dot {
+            width: 8px;
+            height: 8px;
+            background: #F59E0B;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, #22C55E, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero > p {
+            font-size: 17px;
+            color: #666;
+            margin-bottom: 32px;
+        }
+
+        /* FORM */
+        .lead-form {
+            background: #FAFAFA;
+            border: 1px solid #f0f0f0;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+        .progress-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .progress-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #E5E7EB;
+        }
+        .progress-dots span.active { background: #22C55E; }
+        .form-fields {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .form-fields input {
+            padding: 14px 16px;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: system-ui, sans-serif;
+            background: #fff;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-fields input:focus { border-color: #22C55E; }
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: #22C55E;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+        .form-submit:hover { background: #16a34a; transform: translateY(-1px); }
+        .form-note {
+            font-size: 12px;
+            color: #999;
+            margin-top: 12px;
+        }
+
+        /* TRUST BADGES */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 16px;
+        }
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #666;
+            font-weight: 500;
+        }
+        .trust-badge svg { width: 16px; height: 16px; stroke: #22C55E; fill: none; stroke-width: 2; }
+
+        /* SOCIAL PROOF */
+        .social-proof {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 24px 40px 40px;
+        }
+        .proof-stat {
+            text-align: center;
+        }
+        .proof-stat .number {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1a1a1a;
+        }
+        .proof-stat .label {
+            font-size: 13px;
+            color: #999;
+            font-weight: 500;
+        }
+
+        /* FEATURES */
+        .features {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 40px 60px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .feature-card {
+            border: 1px solid #f0f0f0;
+            border-radius: 12px;
+            padding: 28px 24px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+        .feature-card:hover { border-color: #22C55E; }
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 16px;
+            background: #F0FDF4;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .feature-icon svg { width: 22px; height: 22px; stroke: #22C55E; fill: none; stroke-width: 2; }
+        .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .feature-card p { font-size: 14px; color: #666; line-height: 1.6; }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 24px 40px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 13px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">smart<span>flow</span>dev</div>
+        <ul class="nav-links">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#" class="nav-cta">Get Started Free</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="urgency-badge">
+            <span class="urgency-dot"></span>
+            Limited: 3 spots left this month
+        </div>
+        <h1>Get a <span>$1,500 Website</span> in 7 Days</h1>
+        <p>Modern websites for small businesses. Flat pricing, fast delivery, you own everything.</p>
+
+        <div class="lead-form">
+            <div class="progress-dots">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="form-fields">
+                <input type="text" placeholder="Your name">
+                <input type="email" placeholder="Email address">
+                <input type="url" placeholder="Current website (if any)">
+            </div>
+            <button class="form-submit">Get My Free Mockup</button>
+            <p class="form-note">No credit card required. We'll send a free mockup within 24 hours.</p>
+        </div>
+
+        <div class="trust-badges">
+            <div class="trust-badge">
+                <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                No contracts
+            </div>
+            <div class="trust-badge">
+                <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                100% ownership
+            </div>
+            <div class="trust-badge">
+                <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Money-back guarantee
+            </div>
+        </div>
+    </section>
+
+    <div class="social-proof">
+        <div class="proof-stat">
+            <div class="number">140+</div>
+            <div class="label">Sites Launched</div>
+        </div>
+        <div class="proof-stat">
+            <div class="number">4.9</div>
+            <div class="label">Avg. Rating</div>
+        </div>
+        <div class="proof-stat">
+            <div class="number">7</div>
+            <div class="label">Day Delivery</div>
+        </div>
+    </div>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Custom Design</h3>
+            <p>Bespoke designs for your brand. No templates or page builders.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Fast Delivery</h3>
+            <p>$1,500 flat. 7-day turnaround. Live in one week, guaranteed.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>You Own Everything</h3>
+            <p>Full code ownership. No lock-in. No monthly fees. Yours forever.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>smartflowdev.com</p>
+    </footer>
+</body>
+</html>
