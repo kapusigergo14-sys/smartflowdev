@@ -4,20 +4,7 @@ export default function About() {
   return (
     <section id="about" className={styles.section}>
       <div className="container">
-        <div className={styles.grid}>
-          <div className={styles.left}>
-            <div className={styles.avatar}>
-              <div className={styles.avatarInner}>
-                <span className={styles.initials}>G</span>
-              </div>
-              <div className={styles.statusDot}></div>
-            </div>
-            <div className={styles.location}>
-              <span className={styles.locationDot}></span>
-              Hungary · Working globally
-            </div>
-          </div>
-
+        <div className={styles.inner}>
           <div className={styles.right}>
             <div className="pill"><span className="pill-dot"></span> Who builds this</div>
 
@@ -61,6 +48,11 @@ export default function About() {
                 <div className={styles.statNum}>&lt;4h</div>
                 <div className={styles.statLabel}>Reply time</div>
               </div>
+            </div>
+
+            <div className={styles.location}>
+              <span className={styles.locationDot}></span>
+              Hungary · Working globally
             </div>
           </div>
         </div>
