@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { jetbrainsMono } from './fonts';
+import { inter } from './fonts';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -55,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={jetbrainsMono.variable}>
+    <html lang="en" className={inter.variable}>
       <head>
         <script
           type="application/ld+json"

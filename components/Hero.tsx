@@ -1,69 +1,64 @@
-import BeforeAfterSlider from './BeforeAfterSlider';
 import styles from './Hero.module.css';
 
 export default function Hero() {
-  const scrollTo = (id: string) => `document.getElementById('${id}')?.scrollIntoView({behavior:'smooth'})`;
-
   return (
-    <header className={styles.hero}>
-      <div className="container">
-        <div className={styles.topbar}>
-          <span className={styles.logo}>smartflowdev</span>
-          <nav className={styles.topbarLinks}>
-            <a href="#styles">styles</a>
-            <a href="#work">work</a>
-            <a href="#pricing">pricing</a>
-            <a href="#contact">contact</a>
-          </nav>
+    <section id="top" className={styles.hero}>
+      <div className={styles.backdrop}>
+        <div className={styles.glow1}></div>
+        <div className={styles.glow2}></div>
+      </div>
+
+      <div className={`container ${styles.inner}`}>
+        <div className={styles.pill}>
+          <span className={styles.pillDot}></span>
+          Available for new projects
         </div>
 
-        <div className={styles.grid}>
-          <div className={styles.left}>
-            <div className={styles.preHeading}>./smartflowdev --help</div>
-            <h1 className={styles.heading}>
-              I rebuild <span className={styles.headingAccent}>outdated websites</span> for small businesses.
-            </h1>
-            <p className={styles.subheading}>
-              Flat $1,500. 7-day delivery. You get three design options, pick one, and it ships live to your domain. No retainers. No account managers. Just me.
-            </p>
-            <div className={styles.ctaRow}>
-              <a href="#contact" className={styles.primaryBtn}>
-                &gt; start_project.sh
-              </a>
-              <a href="#audit" className={styles.secondaryBtn}>
-                run a free audit →
-              </a>
-            </div>
-            <div className={styles.proofBar}>
-              <div className={styles.proofItem}>
-                <span className={styles.proofNum}>140+</span>
-                <span className={styles.proofLabel}>sites rebuilt</span>
-              </div>
-              <div className={styles.proofItem}>
-                <span className={styles.proofNum}>$1,500</span>
-                <span className={styles.proofLabel}>flat price</span>
-              </div>
-              <div className={styles.proofItem}>
-                <span className={styles.proofNum}>7 days</span>
-                <span className={styles.proofLabel}>delivery</span>
-              </div>
-              <div className={styles.proofItem}>
-                <span className={styles.proofNum}>30 days</span>
-                <span className={styles.proofLabel}>free tweaks</span>
-              </div>
-            </div>
+        <h1 className={`display ${styles.headline}`}>
+          Beautiful websites that<br />
+          <span className="gradient-text">make money.</span>
+        </h1>
+
+        <p className={styles.subtitle}>
+          We design and build conversion-focused websites for small businesses —
+          custom-coded, beautifully designed, live in 5–10 days.
+        </p>
+
+        <div className={styles.actions}>
+          <a href="#contact" className={styles.btnPrimary}>
+            Start a project
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <a href="#work" className={styles.btnSecondary}>
+            See our work
+          </a>
+        </div>
+
+        <div className={styles.trustStrip}>
+          <div className={styles.trustItem}>
+            <span className={styles.trustNum}>140+</span>
+            <span className={styles.trustLabel}>Websites shipped</span>
           </div>
-          <div className={styles.right}>
-            <BeforeAfterSlider
-              filename="neil-gilbert.webp"
-              industry="Legal · UK"
-              beforeSrc="/portfolio/neil-gilbert-before.webp"
-              afterSrc="/portfolio/neil-gilbert-after.webp"
-              priority
-            />
+          <div className={styles.trustDot}></div>
+          <div className={styles.trustItem}>
+            <span className={styles.trustNum}>5–10</span>
+            <span className={styles.trustLabel}>Day turnaround</span>
+          </div>
+          <div className={styles.trustDot}></div>
+          <div className={styles.trustItem}>
+            <span className={styles.trustNum}>12</span>
+            <span className={styles.trustLabel}>Countries served</span>
+          </div>
+          <div className={styles.trustDot}></div>
+          <div className={styles.trustItem}>
+            <span className={styles.trustNum}>$800</span>
+            <span className={styles.trustLabel}>Starter price</span>
           </div>
         </div>
       </div>
-    </header>
+    </section>
   );
 }

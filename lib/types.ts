@@ -26,8 +26,19 @@ export interface ContactPayload {
   name: string;
   email: string;
   website: string;
+  budget: string;
   message: string;
 }
+
+export const BUDGET_OPTIONS = [
+  'Under $1,000',
+  '$1,000 – $2,500',
+  '$2,500 – $5,000',
+  '$5,000+',
+  'Not sure yet',
+] as const;
+
+export type BudgetOption = typeof BUDGET_OPTIONS[number];
 
 export interface ContactResult {
   ok: boolean;

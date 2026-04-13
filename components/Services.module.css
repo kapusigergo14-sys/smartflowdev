@@ -1,0 +1,137 @@
+.section {
+  background: var(--bg);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.title {
+  font-size: clamp(40px, 6vw, 76px);
+}
+
+.subtitle {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink-muted);
+  max-width: 580px;
+}
+
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.pillar {
+  display: grid;
+  grid-template-columns: 200px 1.4fr 1fr;
+  gap: 60px;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+  transition: var(--transition);
+}
+
+.pillar:hover {
+  background: var(--bg-card);
+}
+
+.pillarLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pillarNum {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
+.pillarIcon {
+  width: 56px;
+  height: 56px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pillarName {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--ink);
+}
+
+.pillarMid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pillarHeadline {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.pillarDesc {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-muted);
+}
+
+.pillarRight {
+  padding-top: 6px;
+}
+
+.bulletList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bulletList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.bulletList li svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+@media (max-width: 1024px) {
+  .pillar {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 48px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 56px;
+  }
+  .pillarHeadline {
+    font-size: 26px;
+  }
+}
