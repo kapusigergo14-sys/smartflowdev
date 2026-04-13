@@ -24,7 +24,6 @@ export default function Footer() {
               <a href="#work">Work</a>
               <a href="#services">Services</a>
               <a href="#about">About</a>
-              <a href="#pricing">Pricing</a>
             </div>
             <div className={styles.linkCol}>
               <h4>Connect</h4>

@@ -28,7 +28,7 @@ export default function Nav() {
           <li><a href="#work">Work</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
 
         <a href="#contact" className={styles.cta}>

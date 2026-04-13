@@ -37,8 +37,8 @@ export default function FeaturedWork() {
 
             <div className={styles.iframeWrap}>
               <iframe
-                src="/futura/index.html"
-                title="Futura Yacht Club — live prototype"
+                src="/obsidian/index.html"
+                title="Obsidian AI — live prototype"
                 className={styles.iframe}
                 style={{ pointerEvents: interactive ? 'auto' : 'none' }}
                 loading="lazy"
@@ -69,14 +69,14 @@ export default function FeaturedWork() {
 
             <div className={styles.infoBar}>
               <div className={styles.infoLeft}>
-                <div className={styles.clientName}>Futura Yacht Club</div>
-                <div className={styles.clientIndustry}>Luxury hospitality &middot; Mediterranean</div>
+                <div className={styles.clientName}>Obsidian AI</div>
+                <div className={styles.clientIndustry}>Enterprise security &middot; Columbus, OH</div>
               </div>
               <div className={styles.stack}>
-                <span>React</span>
-                <span>GSAP</span>
-                <span>Framer Motion</span>
-                <span>Tailwind</span>
+                <span>React 19</span>
+                <span>Spline 3D</span>
+                <span>TypeScript</span>
+                <span>Tailwind v4</span>
               </div>
             </div>
           </div>
