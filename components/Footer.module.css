@@ -25,27 +25,23 @@
 }
 
 .logoMark {
-  width: 36px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logoDot {
-  width: 14px;
-  height: 14px;
-  background: var(--accent-bright);
-  border-radius: 4px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 14px rgba(99, 102, 241, 0.35));
 }
 
 .logoText {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.4px;
+}
+
+.logoAccent {
+  display: inline-block;
+  background-image: linear-gradient(120deg, #C4B5FD, #FFFFFF);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .tagline {

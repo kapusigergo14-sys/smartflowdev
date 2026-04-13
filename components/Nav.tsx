@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import LogoMark from './LogoMark';
 import styles from './Nav.module.css';
 
 export default function Nav() {
@@ -17,10 +18,10 @@ export default function Nav() {
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <a href="#top" className={styles.logo}>
-          <span className={styles.logoMark}>
-            <span className={styles.logoDot}></span>
+          <LogoMark size={32} className={styles.logoMark} />
+          <span className={styles.logoText}>
+            smartflow<span className={styles.logoAccent}>dev</span>
           </span>
-          <span className={styles.logoText}>smartflowdev</span>
         </a>
 
         <ul className={styles.links}>

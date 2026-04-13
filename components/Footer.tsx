@@ -1,3 +1,4 @@
+import LogoMark from './LogoMark';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -7,10 +8,10 @@ export default function Footer() {
         <div className={styles.top}>
           <div className={styles.brandCol}>
             <div className={styles.logo}>
-              <span className={styles.logoMark}>
-                <span className={styles.logoDot}></span>
+              <LogoMark size={36} className={styles.logoMark} />
+              <span className={styles.logoText}>
+                smartflow<span className={styles.logoAccent}>dev</span>
               </span>
-              <span className={styles.logoText}>smartflowdev</span>
             </div>
             <p className={styles.tagline}>
               Beautiful websites that make money. Built for small businesses around the world.
