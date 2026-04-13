@@ -1,6 +1,5 @@
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
-import FeaturedWork from '@/components/FeaturedWork';
 import AddOns from '@/components/AddOns';
 import Services from '@/components/Services';
 import About from '@/components/About';
@@ -13,7 +12,6 @@ export default function HomePage() {
       <Nav />
       <main>
         <Hero />
-        <FeaturedWork />
         <AddOns />
         <Services />
         <About />
