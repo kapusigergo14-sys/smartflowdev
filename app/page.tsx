@@ -6,6 +6,7 @@ import Services from '@/components/Services';
 import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import ChatWidget from '@/components/ChatWidget';
 
 export default function HomePage() {
   return (
@@ -20,6 +21,18 @@ export default function HomePage() {
         <Contact />
       </main>
       <Footer />
+      <ChatWidget
+        practiceName="smartflowdev"
+        accentColor="#6366F1"
+        welcomeMessage="Hi! 👋 I'm the smartflowdev assistant. Ask me about what we build, our process, timelines, or how to start a project."
+        quickReplies={[
+          'What do you build?',
+          'How long does it take?',
+          'Can I see examples?',
+          'How do I start a project?',
+        ]}
+        autoOpenDelayMs={6000}
+      />
     </>
   );
 }

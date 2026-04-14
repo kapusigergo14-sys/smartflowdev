@@ -91,13 +91,8 @@ export default function AddOns() {
                 ))}
               </ul>
 
-              <a
-                href={a.id === 'chatbot' ? '/demo/dental-chatbot' : '#contact'}
-                className={styles.cardLink}
-                target={a.id === 'chatbot' ? '_blank' : undefined}
-                rel={a.id === 'chatbot' ? 'noopener noreferrer' : undefined}
-              >
-                {a.id === 'chatbot' ? 'Try live demo' : 'Learn more'}
+              <a href="#contact" className={styles.cardLink}>
+                Learn more
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />

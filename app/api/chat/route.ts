@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
-import { DEMO_SYSTEM_PROMPT } from '@/lib/demo-system-prompt';
+import { CHAT_SYSTEM_PROMPT } from '@/lib/chat-system-prompt';
 
 // In-memory rate limit (per-IP, resets hourly)
 const rateLimits = new Map<string, { count: number; resetAt: number }>();
@@ -81,7 +81,7 @@ export async function POST(req: Request) {
     const response = await anthropic.messages.create({
       model: 'claude-haiku-4-5-20251001',
       max_tokens: 400,
-      system: DEMO_SYSTEM_PROMPT,
+      system: CHAT_SYSTEM_PROMPT,
       messages: messages.map((m) => ({ role: m.role, content: m.content })),
     });
 

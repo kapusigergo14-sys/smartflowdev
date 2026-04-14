@@ -22,7 +22,7 @@ export default function ChatWidget({
   accentColor = '#0d9488',
   welcomeMessage,
   quickReplies,
-  apiEndpoint = '/api/chat/demo',
+  apiEndpoint = '/api/chat',
   autoOpenDelayMs = 3000,
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
