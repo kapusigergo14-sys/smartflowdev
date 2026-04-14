@@ -31,7 +31,8 @@ export default function HomePage() {
           'Can I see examples?',
           'How do I start a project?',
         ]}
-        autoOpenDelayMs={6000}
+        autoOpenDelayMs={0}
+        teaserDelayMs={30000}
       />
     </>
   );

@@ -15,6 +15,8 @@ interface Props {
   quickReplies: string[];
   apiEndpoint?: string;
   autoOpenDelayMs?: number;
+  teaserDelayMs?: number;
+  teaserText?: string;
 }
 
 export default function ChatWidget({
@@ -23,28 +25,56 @@ export default function ChatWidget({
   welcomeMessage,
   quickReplies,
   apiEndpoint = '/api/chat',
-  autoOpenDelayMs = 3000,
+  autoOpenDelayMs = 0,
+  teaserDelayMs = 30000,
+  teaserText = 'Hi! 👋 Can I help you find something?',
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [hasAutoOpened, setHasAutoOpened] = useState(false);
+  const [showTeaser, setShowTeaser] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Auto-open once per session
+  // Auto-open (disabled by default when autoOpenDelayMs = 0)
   useEffect(() => {
+    if (!autoOpenDelayMs || autoOpenDelayMs <= 0) return;
     if (typeof window === 'undefined') return;
-    const alreadyOpened = sessionStorage.getItem('sfd_chat_auto_opened');
-    if (alreadyOpened || hasAutoOpened) return;
+    if (sessionStorage.getItem('sfd_chat_auto_opened')) return;
     const t = setTimeout(() => {
       setIsOpen(true);
-      setHasAutoOpened(true);
       sessionStorage.setItem('sfd_chat_auto_opened', '1');
     }, autoOpenDelayMs);
     return () => clearTimeout(t);
-  }, [autoOpenDelayMs, hasAutoOpened]);
+  }, [autoOpenDelayMs]);
+
+  // Proactive teaser popup (shows after N ms if chat still closed)
+  useEffect(() => {
+    if (!teaserDelayMs || teaserDelayMs <= 0) return;
+    if (typeof window === 'undefined') return;
+    if (sessionStorage.getItem('sfd_chat_teaser_dismissed')) return;
+    const t = setTimeout(() => setShowTeaser(true), teaserDelayMs);
+    return () => clearTimeout(t);
+  }, [teaserDelayMs]);
+
+  // Hide teaser when chat opens
+  useEffect(() => {
+    if (isOpen && showTeaser) setShowTeaser(false);
+  }, [isOpen, showTeaser]);
+
+  const dismissTeaser = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setShowTeaser(false);
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('sfd_chat_teaser_dismissed', '1');
+    }
+  };
+
+  const openFromTeaser = () => {
+    setShowTeaser(false);
+    setIsOpen(true);
+  };
 
   // Auto-scroll on new messages
   useEffect(() => {
@@ -92,6 +122,39 @@ export default function ChatWidget({
 
   return (
     <div className={styles.container} style={cssVars}>
+      {/* Teaser popup (proactive greeting) */}
+      {!isOpen && showTeaser && (
+        <div className={styles.teaserWrap}>
+          <button
+            type="button"
+            className={styles.teaser}
+            onClick={openFromTeaser}
+            aria-label="Open chat"
+          >
+            <div className={styles.teaserAvatar}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <div className={styles.teaserBody}>
+              <div className={styles.teaserName}>{practiceName}</div>
+              <div className={styles.teaserText}>{teaserText}</div>
+            </div>
+          </button>
+          <button
+            type="button"
+            className={styles.teaserClose}
+            onClick={dismissTeaser}
+            aria-label="Dismiss"
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+      )}
+
       {/* Floating bubble (when closed) */}
       {!isOpen && (
         <button
