@@ -7,7 +7,7 @@ import styles from './proposal.module.css';
 export const metadata: Metadata = {
   title: 'Website Redesign Proposal — smartflowdev',
   description:
-    'Modern dental websites in 7 days. Flat pricing $800–$2,500. Mobile-first, fast, clean.',
+    'Modern dental websites in 7 days. Flat pricing $700–$1,900. Mobile-first, fast, clean.',
   alternates: { canonical: 'https://smartflowdev.com/proposal' },
 };
 
@@ -131,7 +131,7 @@ interface PricingTier {
 const PRICING: PricingTier[] = [
   {
     name: 'Starter',
-    price: '$800',
+    price: '$700',
     timeline: '5-day delivery',
     features: [
       '5-page site',
@@ -143,7 +143,7 @@ const PRICING: PricingTier[] = [
   },
   {
     name: 'Standard',
-    price: '$1,500',
+    price: '$1,300',
     timeline: '7-day delivery',
     features: [
       '8 pages',
@@ -158,7 +158,7 @@ const PRICING: PricingTier[] = [
   },
   {
     name: 'Premium',
-    price: '$2,500',
+    price: '$1,900',
     timeline: '10-day delivery',
     features: [
       '12+ pages',
@@ -203,7 +203,7 @@ export default function ProposalPage() {
             </div>
             <div className={styles.heroStats}>
               <div className={styles.statPill}>
-                <strong>$800 – $2,500</strong>
+                <strong>$700 – $1,900</strong>
                 <span>Flat pricing</span>
               </div>
               <div className={styles.statPill}>
