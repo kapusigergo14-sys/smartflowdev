@@ -12,6 +12,20 @@
 .hero {
   padding: var(--section-gap) 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(5, 150, 105, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .heroPill {
@@ -111,6 +125,11 @@
 .compareCard {
   border-radius: var(--radius-lg);
   padding: 36px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.compareCard:hover {
+  transform: translateY(-4px);
 }
 
 .compareCardBad {
@@ -181,6 +200,13 @@
 
 .featureCard {
   padding: 36px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(5, 150, 105, 0.12);
+  border-color: #A7F3D0;
 }
 
 .featureIcon {
@@ -224,6 +250,13 @@
 .stepCard {
   padding: 32px;
   position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.stepCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(5, 150, 105, 0.12);
+  border-color: #A7F3D0;
 }
 
 .stepDay {
@@ -294,6 +327,13 @@
 .trustCard {
   padding: 40px 32px;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.trustCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(5, 150, 105, 0.12);
+  border-color: #A7F3D0;
 }
 
 .trustNumber {
@@ -302,7 +342,10 @@
   letter-spacing: -3px;
   line-height: 1;
   margin-bottom: 8px;
-  color: var(--emerald);
+  background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .trustLabel {
@@ -329,11 +372,24 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.pricingCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(5, 150, 105, 0.12);
+  border-color: #A7F3D0;
 }
 
 .pricingCardFeatured {
   border: 2px solid var(--emerald);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 40px rgba(5, 150, 105, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricingCardFeatured:hover {
+  box-shadow: 0 20px 60px rgba(5, 150, 105, 0.25);
+  transform: translateY(-6px);
 }
 
 .pricingBadge {
@@ -448,12 +504,14 @@
   font-weight: 700;
   margin-bottom: 24px;
   justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btnCtaEmail:hover {
   background: rgba(255, 255, 255, 0.9);
   opacity: 1;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.3);
 }
 
 .ctaFooter {

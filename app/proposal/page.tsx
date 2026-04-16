@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import ScrollReveal from '@/components/ScrollReveal';
 import styles from './proposal.module.css';
 
 export const metadata: Metadata = {
@@ -212,59 +213,65 @@ export default function ProposalPage() {
         {/* ─── Section 2: Problem / Solution ─── */}
         <section className={styles.compare}>
           <div className="container">
-            <h2 className={`display ${styles.sectionTitle}`}>
-              An outdated site costs you patients.
-            </h2>
-            <p className={styles.sectionSub}>
-              75% of visitors judge a practice&apos;s credibility from its
-              website.
-            </p>
-            <div className={styles.compareGrid}>
-              <div className={`${styles.compareCard} ${styles.compareCardBad}`}>
-                <h3 className={styles.compareHeading}>
-                  <span className={styles.iconBad}>&#10007;</span>
-                  The slow, dated site
-                </h3>
-                <ul className={styles.compareList}>
-                  {PROBLEMS.map((item, i) => (
-                    <li key={i}>
-                      <span className={styles.iconBad}>&#10007;</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+            <ScrollReveal>
+              <h2 className={`display ${styles.sectionTitle}`}>
+                An outdated site costs you patients.
+              </h2>
+              <p className={styles.sectionSub}>
+                75% of visitors judge a practice&apos;s credibility from its
+                website.
+              </p>
+              <div className={styles.compareGrid}>
+                <div className={`${styles.compareCard} ${styles.compareCardBad}`}>
+                  <h3 className={styles.compareHeading}>
+                    <span className={styles.iconBad}>&#10007;</span>
+                    The slow, dated site
+                  </h3>
+                  <ul className={styles.compareList}>
+                    {PROBLEMS.map((item, i) => (
+                      <li key={i}>
+                        <span className={styles.iconBad}>&#10007;</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className={`${styles.compareCard} ${styles.compareCardGood}`}>
+                  <h3 className={styles.compareHeading}>
+                    <span className={styles.iconGood}>&#10003;</span>
+                    The modern, fast site
+                  </h3>
+                  <ul className={styles.compareList}>
+                    {SOLUTIONS.map((item, i) => (
+                      <li key={i}>
+                        <span className={styles.iconGood}>&#10003;</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className={`${styles.compareCard} ${styles.compareCardGood}`}>
-                <h3 className={styles.compareHeading}>
-                  <span className={styles.iconGood}>&#10003;</span>
-                  The modern, fast site
-                </h3>
-                <ul className={styles.compareList}>
-                  {SOLUTIONS.map((item, i) => (
-                    <li key={i}>
-                      <span className={styles.iconGood}>&#10003;</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            </ScrollReveal>
           </div>
         </section>
 
         {/* ─── Section 3: What we deliver ─── */}
         <section className={styles.features}>
           <div className="container">
-            <h2 className={`display ${styles.sectionTitle}`}>
-              Everything a modern dental site needs.
-            </h2>
+            <ScrollReveal>
+              <h2 className={`display ${styles.sectionTitle}`}>
+                Everything a modern dental site needs.
+              </h2>
+            </ScrollReveal>
             <div className={styles.featureGrid}>
               {FEATURES.map((f, i) => (
-                <div key={i} className={`card ${styles.featureCard}`}>
-                  <div className={styles.featureIcon}>{f.icon}</div>
-                  <h3 className={styles.featureTitle}>{f.title}</h3>
-                  <p className={styles.featureDesc}>{f.desc}</p>
-                </div>
+                <ScrollReveal key={i} delay={i * 100}>
+                  <div className={`card ${styles.featureCard}`}>
+                    <div className={styles.featureIcon}>{f.icon}</div>
+                    <h3 className={styles.featureTitle}>{f.title}</h3>
+                    <p className={styles.featureDesc}>{f.desc}</p>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -273,39 +280,49 @@ export default function ProposalPage() {
         {/* ─── Section 4: Process ─── */}
         <section className={styles.process}>
           <div className="container">
-            <h2 className={`display ${styles.sectionTitle}`}>
-              From kick-off to live in 7 days.
-            </h2>
+            <ScrollReveal>
+              <h2 className={`display ${styles.sectionTitle}`}>
+                From kick-off to live in 7 days.
+              </h2>
+            </ScrollReveal>
             <div className={styles.stepsGrid}>
               {STEPS.map((step, i) => (
-                <div key={i} className={`card ${styles.stepCard}`}>
-                  <div className={styles.stepDay}>{step.day}</div>
-                  <h3 className={styles.stepTitle}>{step.title}</h3>
-                  <p className={styles.stepDesc}>{step.desc}</p>
-                </div>
+                <ScrollReveal key={i} delay={i * 120}>
+                  <div className={`card ${styles.stepCard}`}>
+                    <div className={styles.stepDay}>{step.day}</div>
+                    <h3 className={styles.stepTitle}>{step.title}</h3>
+                    <p className={styles.stepDesc}>{step.desc}</p>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
-            <div className={styles.guarantees}>
-              <div className={styles.guaranteePill}>30-day free bug fixes</div>
-              <div className={styles.guaranteePill}>Source code is yours</div>
-              <div className={styles.guaranteePill}>3 revision rounds</div>
-            </div>
+            <ScrollReveal>
+              <div className={styles.guarantees}>
+                <div className={styles.guaranteePill}>30-day free bug fixes</div>
+                <div className={styles.guaranteePill}>Source code is yours</div>
+                <div className={styles.guaranteePill}>3 revision rounds</div>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
         {/* ─── Section 5: Trust stats ─── */}
         <section className={styles.trust}>
           <div className="container">
-            <h2 className={`display ${styles.trustTitle}`}>
-              Dental practices that modernize see 30–50% more contact form
-              submissions within 60 days.
-            </h2>
+            <ScrollReveal>
+              <h2 className={`display ${styles.trustTitle}`}>
+                Dental practices that modernize see 30–50% more contact form
+                submissions within 60 days.
+              </h2>
+            </ScrollReveal>
             <div className={styles.trustGrid}>
               {STATS.map((stat, i) => (
-                <div key={i} className={`card ${styles.trustCard}`}>
-                  <div className={styles.trustNumber}>{stat.number}</div>
-                  <div className={styles.trustLabel}>{stat.label}</div>
-                </div>
+                <ScrollReveal key={i} delay={i * 150}>
+                  <div className={`card ${styles.trustCard}`}>
+                    <div className={styles.trustNumber}>{stat.number}</div>
+                    <div className={styles.trustLabel}>{stat.label}</div>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -314,42 +331,45 @@ export default function ProposalPage() {
         {/* ─── Section 6: Pricing ─── */}
         <section className={styles.pricing}>
           <div className="container">
-            <h2 className={`display ${styles.sectionTitle}`}>
-              Pick your tier. Launch next week.
-            </h2>
+            <ScrollReveal>
+              <h2 className={`display ${styles.sectionTitle}`}>
+                Pick your tier. Launch next week.
+              </h2>
+            </ScrollReveal>
             <div className={styles.pricingGrid}>
-              {PRICING.map((tier) => (
-                <div
-                  key={tier.name}
-                  className={`card ${styles.pricingCard} ${
-                    tier.featured ? styles.pricingCardFeatured : ''
-                  }`}
-                >
-                  {tier.badge && (
-                    <span className={styles.pricingBadge}>
-                      &#9733; {tier.badge}
-                    </span>
-                  )}
-                  <h3 className={styles.pricingName}>{tier.name}</h3>
-                  <div className={styles.pricingPrice}>{tier.price}</div>
-                  <div className={styles.pricingTimeline}>{tier.timeline}</div>
-                  <ul className={styles.pricingFeatures}>
-                    {tier.features.map((f, i) => (
-                      <li key={i}>
-                        <span className={styles.checkIcon}>&#10003;</span>
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href="mailto:geri@smartflowdev.com"
-                    className={`btn ${
-                      tier.featured ? styles.btnEmerald : 'btn-primary'
+              {PRICING.map((tier, i) => (
+                <ScrollReveal key={tier.name} delay={i * 120}>
+                  <div
+                    className={`card ${styles.pricingCard} ${
+                      tier.featured ? styles.pricingCardFeatured : ''
                     }`}
                   >
-                    Get {tier.name}
-                  </a>
-                </div>
+                    {tier.badge && (
+                      <span className={styles.pricingBadge}>
+                        &#9733; {tier.badge}
+                      </span>
+                    )}
+                    <h3 className={styles.pricingName}>{tier.name}</h3>
+                    <div className={styles.pricingPrice}>{tier.price}</div>
+                    <div className={styles.pricingTimeline}>{tier.timeline}</div>
+                    <ul className={styles.pricingFeatures}>
+                      {tier.features.map((f, j) => (
+                        <li key={j}>
+                          <span className={styles.checkIcon}>&#10003;</span>
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      href="mailto:geri@smartflowdev.com"
+                      className={`btn ${
+                        tier.featured ? styles.btnEmerald : 'btn-primary'
+                      }`}
+                    >
+                      Get {tier.name}
+                    </a>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -358,38 +378,40 @@ export default function ProposalPage() {
         {/* ─── Section 7: CTA ─── */}
         <section className={styles.cta}>
           <div className="container">
-            <div className={styles.ctaInner}>
-              <h2 className={`display ${styles.ctaTitle}`}>
-                Interested? We&apos;ll build you a free concept.
-              </h2>
-              <p className={styles.ctaSub}>
-                Just reply to our email and we&apos;ll put together a design
-                concept for your practice — free of charge, no obligation.
-              </p>
-              <a
-                href="mailto:geri@smartflowdev.com"
-                className={`btn ${styles.btnCtaEmail}`}
-              >
-                Email geri@smartflowdev.com
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+            <ScrollReveal>
+              <div className={styles.ctaInner}>
+                <h2 className={`display ${styles.ctaTitle}`}>
+                  Interested? We&apos;ll build you a free concept.
+                </h2>
+                <p className={styles.ctaSub}>
+                  Just reply to our email and we&apos;ll put together a design
+                  concept for your practice — free of charge, no obligation.
+                </p>
+                <a
+                  href="mailto:geri@smartflowdev.com"
+                  className={`btn btn-glow ${styles.btnCtaEmail}`}
                 >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-              <p className={styles.ctaFooter}>
-                Gergo Kapusi —{' '}
-                <a href="https://smartflowdev.com">smartflowdev.com</a>
-              </p>
-            </div>
+                  Email geri@smartflowdev.com
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </a>
+                <p className={styles.ctaFooter}>
+                  Gergo Kapusi —{' '}
+                  <a href="https://smartflowdev.com">smartflowdev.com</a>
+                </p>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
       </main>

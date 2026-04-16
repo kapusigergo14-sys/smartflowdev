@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import ScrollReveal from '@/components/ScrollReveal';
 import styles from './phone-agent.module.css';
 
 export const metadata: Metadata = {
@@ -162,7 +163,7 @@ export default function PhoneAgentPage() {
               </p>
               <a
                 href="mailto:geri@smartflowdev.com"
-                className={`btn ${styles.btnAmber}`}
+                className={`btn btn-glow ${styles.btnAmber}`}
               >
                 Get started
                 <svg
@@ -184,58 +185,63 @@ export default function PhoneAgentPage() {
         </section>
 
         {/* ─── Section 2: How it works ─── */}
-        <section className={styles.howSection}>
+        <ScrollReveal as="section" className={styles.howSection}>
           <div className="container">
             <h2 className={styles.howTitle}>How it works</h2>
             <div className={styles.stepsRow}>
-              {STEPS.map((step) => (
-                <div key={step.num} className={styles.step}>
-                  <div className={styles.stepNumber}>{step.num}</div>
-                  <h3 className={styles.stepTitle}>{step.title}</h3>
-                  <p className={styles.stepDesc}>{step.desc}</p>
-                </div>
+              {STEPS.map((step, i) => (
+                <ScrollReveal key={step.num} delay={i * 130}>
+                  <div className={styles.step}>
+                    <div className={styles.stepNumber}>{step.num}</div>
+                    <h3 className={styles.stepTitle}>{step.title}</h3>
+                    <p className={styles.stepDesc}>{step.desc}</p>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
-        </section>
+        </ScrollReveal>
 
         {/* ─── Section 3: Features ─── */}
-        <section>
+        <ScrollReveal as="section">
           <div className="container">
             <h2 className={styles.featuresTitle}>
               Everything your front desk does — at 2 AM.
             </h2>
             <div className={styles.featuresGrid}>
               {FEATURES.map((f, i) => (
-                <div key={i} className={`card ${styles.featureCard}`}>
-                  <div className={styles.featureIcon}>{f.icon}</div>
-                  <h3 className={styles.featureTitle}>{f.title}</h3>
-                  <p className={styles.featureDesc}>{f.desc}</p>
-                </div>
+                <ScrollReveal key={i} delay={i * 100}>
+                  <div className={`card ${styles.featureCard}`}>
+                    <div className={styles.featureIcon}>{f.icon}</div>
+                    <h3 className={styles.featureTitle}>{f.title}</h3>
+                    <p className={styles.featureDesc}>{f.desc}</p>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
-        </section>
+        </ScrollReveal>
 
         {/* ─── Section 4: Scenario ─── */}
-        <section className={styles.scenario}>
+        <ScrollReveal as="section" className={styles.scenario}>
           <div className={styles.scenarioInner}>
             <h2 className={styles.scenarioTitle}>
               Tuesday, 2:17 AM. Your phone rings.
             </h2>
             <div className={styles.chat}>
               {CONVERSATION.map((msg, i) => (
-                <div
-                  key={i}
-                  className={`${styles.bubble} ${
-                    msg.role === 'ai' ? styles.bubbleAi : styles.bubblePatient
-                  }`}
-                >
-                  <div className={styles.bubbleLabel}>
-                    {msg.role === 'ai' ? 'AI Agent' : 'Patient'}
+                <ScrollReveal key={i} delay={i * 200}>
+                  <div
+                    className={`${styles.bubble} ${
+                      msg.role === 'ai' ? styles.bubbleAi : styles.bubblePatient
+                    }`}
+                  >
+                    <div className={styles.bubbleLabel}>
+                      {msg.role === 'ai' ? 'AI Agent' : 'Patient'}
+                    </div>
+                    {msg.text}
                   </div>
-                  {msg.text}
-                </div>
+                </ScrollReveal>
               ))}
             </div>
             <div className={styles.chatOutcome}>
@@ -243,10 +249,10 @@ export default function PhoneAgentPage() {
               of. You slept through it.
             </div>
           </div>
-        </section>
+        </ScrollReveal>
 
         {/* ─── Section 5: Pricing ─── */}
-        <section>
+        <ScrollReveal as="section">
           <div className="container">
             <h2 className={styles.pricingTitle}>Simple, transparent pricing</h2>
             <div className={`card ${styles.pricingCard}`}>
@@ -272,7 +278,7 @@ export default function PhoneAgentPage() {
               </div>
               <a
                 href="mailto:geri@smartflowdev.com"
-                className={`btn ${styles.btnAmber} ${styles.btnFull}`}
+                className={`btn btn-glow ${styles.btnAmber} ${styles.btnFull}`}
               >
                 Let&apos;s talk about your practice
                 <svg
@@ -291,10 +297,10 @@ export default function PhoneAgentPage() {
               </a>
             </div>
           </div>
-        </section>
+        </ScrollReveal>
 
         {/* ─── Section 6: CTA ─── */}
-        <section className={styles.cta}>
+        <ScrollReveal as="section" className={styles.cta}>
           <div className={styles.ctaInner}>
             <h2 className={`display ${styles.ctaTitle}`}>
               Want to hear a demo?
@@ -305,7 +311,7 @@ export default function PhoneAgentPage() {
             </p>
             <a
               href="mailto:geri@smartflowdev.com"
-              className={`btn ${styles.ctaBtn}`}
+              className={`btn btn-glow ${styles.ctaBtn}`}
             >
               Email geri@smartflowdev.com
               <svg
@@ -323,7 +329,7 @@ export default function PhoneAgentPage() {
               </svg>
             </a>
           </div>
-        </section>
+        </ScrollReveal>
       </main>
       <Footer />
     </>
