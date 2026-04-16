@@ -1,0 +1,394 @@
+/* ─── Hero ──────────────────────────────────── */
+
+.hero {
+  padding-top: clamp(120px, 18vw, 200px);
+  padding-bottom: var(--section-gap);
+  text-align: center;
+}
+
+.heroInner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  margin-top: 20px;
+  margin-bottom: 28px;
+}
+
+.heroSub {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: var(--ink-muted);
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto 40px;
+}
+
+/* ─── How It Works ──────────────────────────── */
+
+.howSection {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.howTitle {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 60px;
+}
+
+.stepsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.step {
+  text-align: center;
+}
+
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.stepTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin-bottom: 10px;
+}
+
+.stepDesc {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  line-height: 1.65;
+}
+
+/* ─── Features ──────────────────────────────── */
+
+.featuresTitle {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 60px;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.featureCard {
+  padding: 36px 32px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.featureIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.featureTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  margin-bottom: 8px;
+}
+
+.featureDesc {
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+  line-height: 1.65;
+}
+
+/* ─── Scenario ──────────────────────────────── */
+
+.scenario {
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+  border-radius: var(--radius-xl);
+  margin: 0 var(--container-pad);
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scenarioInner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.scenarioTitle {
+  text-align: center;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 48px;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.bubble {
+  max-width: 82%;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.bubblePatient {
+  align-self: flex-end;
+  background: var(--accent);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.bubbleBot {
+  align-self: flex-start;
+  background: var(--bg-dark-2);
+  color: var(--ink-on-dark);
+  border: 1px solid var(--border-dark);
+  border-bottom-left-radius: 4px;
+}
+
+.bubbleLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  opacity: 0.6;
+}
+
+.chatOutcome {
+  text-align: center;
+  padding: 20px 24px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--accent-bright);
+  margin-bottom: 40px;
+}
+
+.scenarioFooter {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--ink-subtle);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ─── Pricing ───────────────────────────────── */
+
+.pricingTitle {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 48px;
+}
+
+.pricingCard {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 48px 40px;
+  text-align: center;
+  box-shadow: var(--shadow-elevated);
+}
+
+.priceMain {
+  font-size: clamp(3rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.priceLabel {
+  font-size: 1rem;
+  color: var(--ink-muted);
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+.priceSub {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.priceMonthly {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+}
+
+.priceMonthlyLabel {
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+  margin-bottom: 32px;
+}
+
+.priceFree {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 32px;
+}
+
+.priceList {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 36px;
+}
+
+.priceList li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.priceList li:last-child {
+  border-bottom: none;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── CTA ───────────────────────────────────── */
+
+.cta {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: #fff;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  margin: 0 var(--container-pad);
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaInner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.ctaTitle {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 16px;
+}
+
+.ctaSub {
+  font-size: 1.05rem;
+  opacity: 0.88;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.ctaBtn {
+  background: #fff;
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.ctaBtn:hover {
+  background: var(--accent-soft);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* ─── Responsive ────────────────────────────── */
+
+@media (max-width: 900px) {
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stepsRow {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingCard {
+    padding: 36px 24px;
+  }
+
+  .scenario {
+    border-radius: var(--radius-lg);
+    margin: 0 12px;
+  }
+
+  .cta {
+    border-radius: var(--radius-lg);
+    margin: 0 12px;
+  }
+
+  .bubble {
+    max-width: 92%;
+  }
+}
