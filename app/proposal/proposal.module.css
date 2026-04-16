@@ -56,8 +56,35 @@
   font-size: clamp(16px, 2vw, 20px);
   color: var(--ink-muted);
   max-width: 660px;
-  margin: 0 auto 48px;
+  margin: 0 auto 32px;
   line-height: 1.7;
+}
+
+.heroCtas {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.heroBtn {
+  background: #059669;
+  color: #fff;
+  padding: 18px 32px;
+  font-size: 16px;
+  border-radius: var(--radius-md);
+}
+
+.heroBtn:hover {
+  background: #047857;
+  opacity: 1;
+}
+
+.heroBtnSecondary {
+  padding: 18px 28px;
+  font-size: 16px;
+  border-radius: var(--radius-md);
 }
 
 .heroStats {

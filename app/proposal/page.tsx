@@ -193,6 +193,14 @@ export default function ProposalPage() {
               flat pricing — no agency retainer, no open-ended hours, no
               surprises.
             </p>
+            <div className={styles.heroCtas}>
+              <a href="mailto:geri@smartflowdev.com" className={`btn btn-primary btn-glow ${styles.heroBtn}`}>
+                Get a free concept →
+              </a>
+              <a href="#pricing" className={`btn btn-secondary ${styles.heroBtnSecondary}`}>
+                See pricing
+              </a>
+            </div>
             <div className={styles.heroStats}>
               <div className={styles.statPill}>
                 <strong>$800 – $2,500</strong>
@@ -329,7 +337,7 @@ export default function ProposalPage() {
         </section>
 
         {/* ─── Section 6: Pricing ─── */}
-        <section className={styles.pricing}>
+        <section id="pricing" className={styles.pricing}>
           <div className="container">
             <ScrollReveal>
               <h2 className={`display ${styles.sectionTitle}`}>
