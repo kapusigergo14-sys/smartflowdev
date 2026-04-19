@@ -2,6 +2,26 @@
   position: relative;
   padding: 168px 0 120px;
   overflow: hidden;
+  isolation: isolate;
+}
+
+/* ─── Shader gradient background layer ───────── */
+.bgLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Soft warm-white wash on top of the shader so headline/sub/stats card
+   stay readable. Adjust opacity (0.35-0.6) to dial shader visibility. */
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(250, 250, 247, 0.88) 0%, rgba(250, 250, 247, 0.55) 55%, rgba(250, 250, 247, 0.25) 100%);
+  pointer-events: none;
 }
 
 .inner {

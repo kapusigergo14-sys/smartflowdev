@@ -1,8 +1,14 @@
 import styles from './Hero.module.css';
+import HeroBackground from './HeroBackground';
 
 export default function Hero() {
   return (
     <section id="top" className={styles.hero}>
+      <div className={styles.bgLayer} aria-hidden="true">
+        <HeroBackground />
+        <div className={styles.bgOverlay} />
+      </div>
+
       <div className={`container ${styles.inner}`}>
         <div className={styles.left}>
           <div className={styles.eyebrow}>
