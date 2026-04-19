@@ -80,6 +80,15 @@ html {
   background: var(--bg);
 }
 
+/* Any anchored section clears the fixed top bar (44px) + nav (~72px) */
+[id="pricing"],
+[id="work"],
+[id="services"],
+[id="about"],
+[id="contact"] {
+  scroll-margin-top: calc(var(--topbar-h, 0px) + 90px);
+}
+
 body {
   /* Transparent so <SiteBackground /> at z-index:-1 stays visible. */
   background: transparent;

@@ -43,13 +43,18 @@ export default function OfferTopBar() {
   }, [active, dismissed]);
 
   const handleClaim = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // If #pricing exists on current page, smooth-scroll instead of
-    // letting the browser jump.
-    const el = typeof document !== 'undefined' ? document.getElementById('pricing') : null;
-    if (el) {
-      e.preventDefault();
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    if (typeof document === 'undefined') return;
+    const el = document.getElementById('pricing');
+    if (!el) return; // let the /#pricing href navigate
+    e.preventDefault();
+    // Manual offset so the section header clears the fixed top bar + nav
+    // (scrollIntoView ignores scroll-margin in some browsers when called
+    // programmatically with behavior:smooth).
+    const rect = el.getBoundingClientRect();
+    const topbarH = 44; // matches OfferTopBar height
+    const navH = 72;    // rough Nav height — padding + content
+    const target = rect.top + window.pageYOffset - topbarH - navH - 16;
+    window.scrollTo({ top: target, behavior: 'smooth' });
   };
 
   const dismiss = () => {

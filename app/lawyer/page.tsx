@@ -330,7 +330,7 @@ export default function LawyerPage() {
         </ScrollReveal>
 
         {/* ── Section 6: Pricing ───────────────────── */}
-        <ScrollReveal as="section" className={s.pricingSection}>
+        <ScrollReveal as="section" id="pricing" className={s.pricingSection}>
           <div className="container">
             <div className={s.pricingHeader}>
               <div>
