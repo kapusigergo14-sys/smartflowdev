@@ -172,7 +172,7 @@ export default function IndustryLanding(props: IndustryLandingProps) {
                   <li><span className={s.checkIcon}>{checkSvg}</span> Basic FAQ training</li>
                   <li><span className={s.checkIcon}>{checkSvg}</span> Live in 5 business days</li>
                 </ul>
-                <a href={props.primaryCtaHref} className={s.priceCardCta}>Get Starter</a>
+                <a href="/#contact" className={s.priceCardCta}>Get Starter</a>
               </div>
 
               <div className={`${s.priceCard} ${s.priceCardFeatured}`}>
@@ -189,7 +189,7 @@ export default function IndustryLanding(props: IndustryLandingProps) {
                   <li><span className={s.checkIcon}>{checkSvg}</span> Custom training on your services</li>
                   <li><span className={s.checkIcon}>{checkSvg}</span> Email + SMS notifications</li>
                 </ul>
-                <a href={props.primaryCtaHref} className={s.priceCardCta}>Get Professional</a>
+                <a href="/#contact" className={s.priceCardCta}>Get Professional</a>
               </div>
 
               <div className={s.priceCard}>
@@ -205,7 +205,7 @@ export default function IndustryLanding(props: IndustryLandingProps) {
                   <li><span className={s.checkIcon}>{checkSvg}</span> Monthly tuning &amp; analytics</li>
                   <li><span className={s.checkIcon}>{checkSvg}</span> Priority support</li>
                 </ul>
-                <a href={props.primaryCtaHref} className={s.priceCardCta}>Get Premium</a>
+                <a href="/#contact" className={s.priceCardCta}>Get Premium</a>
               </div>
             </div>
           </div>

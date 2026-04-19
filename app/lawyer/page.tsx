@@ -367,7 +367,7 @@ export default function LawyerPage() {
                     <li><span className={s.checkIcon}>{checkSvg}</span> 30-day post-launch support</li>
                     <li><span className={s.checkIcon}>{checkSvg}</span> Email support</li>
                   </ul>
-                  <a href="mailto:geri@smartflowdev.com" className={`btn btn-primary btn-glow ${s.planBtn}`}>
+                  <a href="/#contact" className={`btn btn-primary btn-glow ${s.planBtn}`}>
                     Get started
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12" />
@@ -396,7 +396,7 @@ export default function LawyerPage() {
                       <li><span className={s.checkIcon}>{checkSvg}</span> Priority support</li>
                       <li><span className={s.checkIcon}>{checkSvg}</span> Quarterly updates</li>
                     </ul>
-                    <a href="mailto:geri@smartflowdev.com" className={`btn btn-accent btn-glow ${s.planBtn}`}>
+                    <a href="/#contact" className={`btn btn-accent btn-glow ${s.planBtn}`}>
                       Get started
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12" />
@@ -424,7 +424,7 @@ export default function LawyerPage() {
                     <li><span className={s.checkIcon}>{checkSvg}</span> Dedicated account manager</li>
                     <li><span className={s.checkIcon}>{checkSvg}</span> Monthly strategy calls</li>
                   </ul>
-                  <a href="mailto:geri@smartflowdev.com" className={`btn btn-primary btn-glow ${s.planBtn}`}>
+                  <a href="/#contact" className={`btn btn-primary btn-glow ${s.planBtn}`}>
                     Get started
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12" />
