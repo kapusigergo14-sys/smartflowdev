@@ -129,16 +129,6 @@ const CONVERSATION = [
   },
 ];
 
-const INCLUDES = [
-  'Custom voice training',
-  'Phone number setup',
-  'Google Calendar sync',
-  'Email transcripts',
-  'Call routing rules',
-  'Unlimited calls',
-  '24/7 operation',
-];
-
 export default function PhoneAgentPage() {
   return (
     <>
@@ -251,55 +241,7 @@ export default function PhoneAgentPage() {
           </div>
         </ScrollReveal>
 
-        {/* ─── Section 5: Pricing ─── */}
-        <ScrollReveal as="section">
-          <div className="container">
-            <h2 className={styles.pricingTitle}>Simple, transparent pricing</h2>
-            <div className={`card ${styles.pricingCard}`}>
-              <div className={styles.priceMain}>Custom pricing</div>
-              <p className={styles.priceLabel}>
-                Depends on call volume and features
-              </p>
-              <div className={styles.priceSub}>
-                <span className={styles.priceMonthly}>Starting from $99/month</span>
-              </div>
-              <p className={styles.priceMonthlyLabel}>after setup</p>
-              <ul className={styles.priceList}>
-                {INCLUDES.map((item, i) => (
-                  <li key={i}>
-                    <span className={styles.checkIcon}>&#10003;</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className={styles.setupPrice}>
-                Setup: <strong>$1,500</strong>{' '}
-                <span className={styles.setupLabel}>one-time</span>
-              </div>
-              <a
-                href="mailto:geri@smartflowdev.com"
-                className={`btn btn-glow ${styles.btnAmber} ${styles.btnFull}`}
-              >
-                Let&apos;s talk about your practice
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </ScrollReveal>
-
-        {/* ─── Section 6: CTA ─── */}
+        {/* ─── Section 5: CTA ─── */}
         <ScrollReveal as="section" className={styles.cta}>
           <div className={styles.ctaInner}>
             <h2 className={`display ${styles.ctaTitle}`}>

@@ -13,8 +13,8 @@ const ADDONS = [
       'Captures every after-hours lead',
       'Google Calendar integration',
     ],
-    accent: '#6366F1',
-    accentSoft: '#EEF2FF',
+    accent: '#1B1B1F',
+    accentSoft: '#F2F1ED',
     href: '/chatbot',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -34,8 +34,8 @@ const ADDONS = [
       'Email transcripts after each call',
       'Routes urgent calls to you',
     ],
-    accent: '#F59E0B',
-    accentSoft: '#FEF3C7',
+    accent: '#FF3D2E',
+    accentSoft: '#FFE9E6',
     href: '/phone-agent',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
