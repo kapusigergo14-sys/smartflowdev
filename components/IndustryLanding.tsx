@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import Nav from './Nav';
 import Footer from './Footer';
 import ScrollReveal from './ScrollReveal';
+import { OfferBanner, DiscountPrice } from './OfferCountdown';
 import s from './IndustryLanding.module.css';
 
 export interface IndustryLandingProps {
@@ -153,13 +154,16 @@ export default function IndustryLanding(props: IndustryLandingProps) {
               <p className={s.sectionSub}>
                 Pick a tier. We ship in 5 days. Cancel any month. That&rsquo;s the whole pitch.
               </p>
+              <div style={{ marginTop: 24, textAlign: 'center' }}>
+                <OfferBanner />
+              </div>
             </div>
 
             <div className={s.pricing}>
               <div className={s.priceCard}>
                 <div className={s.priceTier}>Starter</div>
                 <div className={s.priceMain}>
-                  $700<small> setup</small>
+                  <DiscountPrice amount={700} suffix=" setup" />
                 </div>
                 <div className={s.priceMonthly}>$49 / month after first free month</div>
                 <ul className={s.priceList}>
@@ -175,7 +179,7 @@ export default function IndustryLanding(props: IndustryLandingProps) {
                 <span className={s.priceBadge}>Most popular</span>
                 <div className={s.priceTier}>Professional</div>
                 <div className={s.priceMain}>
-                  $1,300<small> setup</small>
+                  <DiscountPrice amount={1300} suffix=" setup" />
                 </div>
                 <div className={s.priceMonthly}>$79 / month after first free month</div>
                 <ul className={s.priceList}>
@@ -191,7 +195,7 @@ export default function IndustryLanding(props: IndustryLandingProps) {
               <div className={s.priceCard}>
                 <div className={s.priceTier}>Premium</div>
                 <div className={s.priceMain}>
-                  $1,900<small> setup</small>
+                  <DiscountPrice amount={1900} suffix=" setup" />
                 </div>
                 <div className={s.priceMonthly}>$129 / month after first free month</div>
                 <ul className={s.priceList}>

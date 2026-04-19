@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { inter } from './fonts';
 import SiteBackground from '@/components/SiteBackground';
+import { OfferProvider } from '@/components/OfferCountdown';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -65,7 +66,9 @@ export default function RootLayout({
       </head>
       <body>
         <SiteBackground />
-        {children}
+        <OfferProvider>
+          {children}
+        </OfferProvider>
       </body>
     </html>
   );

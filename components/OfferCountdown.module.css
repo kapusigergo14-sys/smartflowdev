@@ -1,0 +1,75 @@
+/* ─── Offer banner (above pricing section) ─────────────────── */
+
+.banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 18px 10px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-hot);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  box-shadow: var(--shadow-md);
+  margin: 0 auto 36px;
+  animation: offerPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes offerPulse {
+  0%, 100% { box-shadow: 0 4px 14px rgba(255, 61, 46, 0.30), 0 1px 3px rgba(10,10,15,0.08); }
+  50%      { box-shadow: 0 6px 22px rgba(255, 61, 46, 0.50), 0 2px 6px rgba(10,10,15,0.10); }
+}
+
+.bannerBadge {
+  background: rgba(255, 255, 255, 0.22);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.bannerText {
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+.bannerTimer {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner { animation: none; }
+}
+
+/* ─── Inline price with crossed-out original ─────────────────── */
+
+.strike {
+  position: relative;
+  display: inline-block;
+  color: var(--ink-muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--accent-hot);
+  text-decoration-thickness: 2px;
+  margin-right: 10px;
+  font-size: 0.65em;
+  font-weight: 700;
+  opacity: 0.65;
+}
+
+.deal {
+  color: var(--accent-hot);
+}
+
+@media (max-width: 640px) {
+  .banner {
+    font-size: 12px;
+    gap: 10px;
+    padding: 9px 16px 9px 12px;
+  }
+  .bannerText { display: none; } /* keep badge + timer on narrow screens */
+}

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
+import { OfferBanner, DiscountPrice } from '@/components/OfferCountdown';
 import s from './chatbot.module.css';
 
 export const metadata: Metadata = {
@@ -346,12 +347,16 @@ export default function ChatbotPage() {
               <p className={s.pricingNote}>One-time setup + optional monthly</p>
             </div>
 
+            <div style={{ textAlign: 'center', marginBottom: 32 }}>
+              <OfferBanner />
+            </div>
+
             <div className={s.pricingGrid}>
               {/* Starter */}
               <ScrollReveal delay={0}>
                 <div className={`${s.priceCard}`}>
                   <h3 className={s.planName}>Starter</h3>
-                  <div className={s.planPrice}>$700</div>
+                  <div className={s.planPrice}><DiscountPrice amount={700} /></div>
                   <div className={s.planPriceLabel}>one-time setup</div>
                   <div className={s.planMonthly}>+$49 <span>/month</span></div>
                   <div className={s.planMonthlyLabel}>support, hosting &amp; updates</div>
@@ -379,7 +384,7 @@ export default function ChatbotPage() {
                   <span className={s.popularBadge}>MOST POPULAR</span>
                   <div className={`${s.priceCard} ${s.priceCardFeatured}`}>
                     <h3 className={s.planName}>Professional</h3>
-                    <div className={s.planPrice}>$1,300</div>
+                    <div className={s.planPrice}><DiscountPrice amount={1300} /></div>
                     <div className={s.planPriceLabel}>one-time setup</div>
                     <div className={s.planMonthly}>+$79 <span>/month</span></div>
                     <div className={s.planMonthlyLabel}>support, hosting &amp; updates</div>
@@ -407,7 +412,7 @@ export default function ChatbotPage() {
               <ScrollReveal delay={200}>
                 <div className={`${s.priceCard}`}>
                   <h3 className={`${s.planName} ${s.planNameAccent}`}>Premium</h3>
-                  <div className={`${s.planPrice} gradient-text`}>$1,900</div>
+                  <div className={`${s.planPrice} gradient-text`}><DiscountPrice amount={1900} /></div>
                   <div className={s.planPriceLabel}>one-time setup</div>
                   <div className={s.planMonthly}>+$129 <span>/month</span></div>
                   <div className={s.planMonthlyLabel}>support, hosting &amp; updates</div>
