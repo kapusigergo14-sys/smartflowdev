@@ -3,6 +3,8 @@ import { inter } from './fonts';
 import SiteBackground from '@/components/SiteBackground';
 import { OfferProvider } from '@/components/OfferCountdown';
 import OfferTopBar from '@/components/OfferTopBar';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -71,6 +73,8 @@ export default function RootLayout({
           <OfferTopBar />
           {children}
         </OfferProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
