@@ -3,6 +3,14 @@ type Props = {
   className?: string;
 };
 
+/**
+ * Logo mark — two stacked waves on an ink rounded square.
+ * - Top wave: white @ 28% opacity (the subtle echo)
+ * - Bottom wave: hot-red #FF3D2E (the brand accent, bolder stroke)
+ *
+ * Monochrome-dominant ink with one accent color — matches the site's
+ * light+bold design system. The "flow" idea from the name is preserved.
+ */
 export default function LogoMark({ size = 32, className }: Props) {
   return (
     <svg
@@ -14,26 +22,20 @@ export default function LogoMark({ size = 32, className }: Props) {
       className={className}
       aria-hidden="true"
     >
-      <defs>
-        <linearGradient id="smartflow-mark" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#6366F1" />
-          <stop offset="100%" stopColor="#A855F7" />
-        </linearGradient>
-      </defs>
-      <rect width="40" height="40" rx="10" fill="url(#smartflow-mark)" />
+      <rect width="40" height="40" rx="10" fill="#1B1B1F" />
       <path
         d="M7 15 Q13 9, 20 15 T33 15"
-        stroke="white"
-        strokeWidth="2.6"
+        stroke="#FFFFFF"
+        strokeWidth="2.4"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
-        opacity="0.55"
+        opacity="0.3"
       />
       <path
         d="M7 25 Q13 19, 20 25 T33 25"
-        stroke="white"
-        strokeWidth="2.6"
+        stroke="#FF3D2E"
+        strokeWidth="2.8"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
