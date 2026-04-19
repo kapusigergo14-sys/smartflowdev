@@ -7,9 +7,10 @@ interface Props {
   className?: string;
   delay?: number;
   as?: 'div' | 'section';
+  id?: string;
 }
 
-export default function ScrollReveal({ children, className = '', delay = 0, as: Tag = 'div' }: Props) {
+export default function ScrollReveal({ children, className = '', delay = 0, as: Tag = 'div', id }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -37,7 +38,7 @@ export default function ScrollReveal({ children, className = '', delay = 0, as: 
   }, [delay]);
 
   return (
-    <Tag ref={ref as any} className={`reveal-on-scroll ${className}`}>
+    <Tag ref={ref as any} id={id} className={`reveal-on-scroll ${className}`}>
       {children}
     </Tag>
   );

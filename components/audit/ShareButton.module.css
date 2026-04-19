@@ -1,0 +1,40 @@
+.wrap {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.copyBtn,
+.iconBtn {
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.copyBtn:hover,
+.iconBtn:hover {
+  border-color: var(--ink);
+  background: var(--bg);
+  opacity: 1;
+}
+
+.copyBtn {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.copyBtn:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}

@@ -1,25 +1,25 @@
 /* ─── Amber accent tokens (local) ───────────── */
 
 .pillAmber {
-  background: #FEF3C7;
-  color: #B45309;
+  background: var(--accent-hot-soft);
+  color: var(--accent-hot);
 }
 
 .pillDotAmber {
-  background: #F59E0B;
+  background: var(--accent-hot);
 }
 
 .amberText {
-  color: #F59E0B;
+  color: var(--accent-hot);
 }
 
 .btnAmber {
-  background: #F59E0B;
+  background: var(--accent-hot);
   color: #fff;
 }
 
 .btnAmber:hover {
-  background: #D97706;
+  background: var(--accent-hot);
   opacity: 1;
   transform: translateY(-1px);
 }
@@ -41,7 +41,7 @@
   right: -5%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 61, 46, 0.06) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -101,8 +101,8 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #FEF3C7;
-  color: #B45309;
+  background: var(--accent-hot-soft);
+  color: var(--accent-hot);
   font-weight: 800;
   font-size: 18px;
   margin-bottom: 20px;
@@ -110,7 +110,7 @@
 }
 
 .stepNumber:hover {
-  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+  box-shadow: 0 0 20px rgba(255, 61, 46, 0.20);
 }
 
 .stepTitle {
@@ -149,16 +149,16 @@
 
 .featureCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(245, 158, 11, 0.12);
-  border-color: #FCD34D;
+  box-shadow: 0 12px 40px rgba(255, 61, 46, 0.06);
+  border-color: var(--accent-hot);
 }
 
 .featureIcon {
   width: 44px;
   height: 44px;
   border-radius: var(--radius-sm);
-  background: #FEF3C7;
-  color: #B45309;
+  background: var(--accent-hot-soft);
+  color: var(--accent-hot);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -202,7 +202,7 @@
   font-weight: 800;
   letter-spacing: -1px;
   margin-bottom: 48px;
-  color: #FEF3C7;
+  color: var(--accent-hot-soft);
 }
 
 .chat {
@@ -235,7 +235,7 @@
 
 .bubblePatient {
   align-self: flex-end;
-  background: #F59E0B;
+  background: var(--accent-hot);
   color: #fff;
   border-bottom-right-radius: 4px;
 }
@@ -252,12 +252,12 @@
 .chatOutcome {
   text-align: center;
   padding: 20px 24px;
-  background: rgba(245, 158, 11, 0.12);
-  border: 1px solid rgba(245, 158, 11, 0.25);
+  background: rgba(255, 61, 46, 0.06);
+  border: 1px solid rgba(10, 10, 15, 0.14);
   border-radius: var(--radius-md);
   font-weight: 600;
   font-size: 0.95rem;
-  color: #FBBF24;
+  color: var(--accent-hot);
   margin-bottom: 40px;
 }
 
@@ -277,13 +277,13 @@
   padding: 48px 40px;
   text-align: center;
   box-shadow: var(--shadow-elevated);
-  border-top: 4px solid #F59E0B;
+  border-top: 4px solid var(--accent-hot);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .pricingCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 50px rgba(245, 158, 11, 0.15);
+  box-shadow: 0 16px 50px rgba(10, 10, 15, 0.08);
 }
 
 .priceMain {
@@ -312,7 +312,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.5px;
-  background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+  background: linear-gradient(135deg, var(--accent-hot) 0%, var(--accent-hot) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -349,8 +349,8 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #FEF3C7;
-  color: #B45309;
+  background: var(--accent-hot-soft);
+  color: var(--accent-hot);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -385,7 +385,7 @@
 /* ─── CTA ──────────────────────────────────── */
 
 .cta {
-  background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+  background: linear-gradient(135deg, var(--accent-hot) 0%, var(--accent-hot) 100%);
   color: #fff;
   text-align: center;
   border-radius: var(--radius-xl);
@@ -419,7 +419,7 @@
 
 .ctaBtn {
   background: var(--bg-dark);
-  color: #F59E0B;
+  color: var(--accent-hot);
   font-weight: 700;
 }
 

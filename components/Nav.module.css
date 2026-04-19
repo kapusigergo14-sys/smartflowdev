@@ -10,11 +10,11 @@
 }
 
 .scrolled {
-  background: rgba(250, 250, 250, 0.85);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: rgba(250, 250, 247, 0.82);
+  backdrop-filter: saturate(180%) blur(22px);
+  -webkit-backdrop-filter: saturate(180%) blur(22px);
   padding: 14px 0;
-  border-bottom-color: var(--border);
+  border-bottom-color: var(--border-soft);
 }
 
 .inner {
@@ -42,7 +42,7 @@
 
 .logoMark {
   flex-shrink: 0;
-  filter: drop-shadow(0 4px 10px rgba(99, 102, 241, 0.25));
+  filter: drop-shadow(0 4px 10px rgba(255, 61, 46, 0.20));
   transition: transform var(--transition);
 }
 
@@ -59,7 +59,7 @@
 
 .logoAccent {
   display: inline-block;
-  background-image: linear-gradient(120deg, #6366F1, #A855F7);
+  background-image: linear-gradient(120deg, var(--ink), var(--accent-hot));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

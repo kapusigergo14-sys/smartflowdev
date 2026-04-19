@@ -1,0 +1,257 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-soft);
+  flex-wrap: wrap;
+}
+
+.auditedLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.auditedUrl {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  word-break: break-all;
+}
+
+.auditedUrl:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.resetBtn {
+  padding: 12px 22px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.resetBtn:hover {
+  background: var(--bg);
+  border-color: var(--ink);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.2px;
+}
+
+/* ─── Screenshots ─── */
+
+.screenshotGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.screenshotFig {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.screenshotFig figcaption {
+  color: var(--ink-muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.screenshotDesktop,
+.screenshotMobile {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: block;
+}
+
+.screenshotMobile {
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .screenshotGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Metric cards ─── */
+
+.metricGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.metricCard {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  background: var(--bg-card);
+  transition: var(--transition);
+}
+
+.metricCard[data-tone="good"] {
+  border-color: #BBF7D0;
+  background: #F0FDF4;
+}
+.metricCard[data-tone="ok"] {
+  border-color: #FED7AA;
+  background: #FFF7ED;
+}
+.metricCard[data-tone="bad"] {
+  border-color: #FECACA;
+  background: #FEF2F2;
+}
+
+.metricLabel {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.metricValue {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.5px;
+}
+
+.metricSub {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  margin-top: 4px;
+}
+
+.noteText {
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .metricGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Detection cards ─── */
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── SEO checklist ─── */
+
+.checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--bg);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.checkIcon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.checkItem[data-ok="true"] .checkIcon {
+  background: var(--lime);
+}
+
+.checkItem[data-ok="false"] .checkIcon {
+  background: var(--ink-subtle);
+}
+
+.checkItem[data-ok="false"] {
+  color: var(--ink-muted);
+}
+
+/* ─── CTA box ─── */
+
+.ctaBox {
+  background: linear-gradient(135deg, var(--accent-soft) 0%, #FCE7F3 100%);
+  border: 1px solid var(--accent-soft);
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 4vw, 40px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.ctaBox h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.3px;
+}
+
+.ctaBox p {
+  color: var(--ink-soft);
+  max-width: 460px;
+}
+
+.ctaBox .btn {
+  margin-top: 4px;
+}

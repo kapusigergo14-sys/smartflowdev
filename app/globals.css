@@ -1,55 +1,68 @@
 :root {
-  /* Surfaces */
-  --bg: #FAFAFA;
+  /* ─── Surfaces ───────────────────────────────── */
+  --bg: #FAFAF7;          /* warm white — Stripe-like */
   --bg-card: #FFFFFF;
-  --bg-dark: #0A0A0A;
-  --bg-dark-2: #18181B;
+  --bg-elevated: #FFFFFF;
+  --bg-subtle: #F2F1ED;
+  --bg-dark: #0A0A0F;
+  --bg-dark-2: #1B1B1F;
 
-  /* Text */
-  --ink: #0A0A0A;
-  --ink-soft: #27272A;
-  --ink-muted: #71717A;
-  --ink-subtle: #A1A1AA;
-  --ink-on-dark: #FAFAFA;
+  /* ─── Text ───────────────────────────────────── */
+  --ink: #0A0A0F;         /* near-black */
+  --ink-soft: #2C2C33;
+  --ink-muted: #5C5C66;
+  --ink-subtle: #8B8B95;
+  --ink-on-dark: #FAFAF7;
 
-  /* Borders */
-  --border: #E4E4E7;
-  --border-soft: #F4F4F5;
+  /* ─── Borders ────────────────────────────────── */
+  --border: #E8E7E0;
+  --border-soft: #F2F1ED;
+  --border-strong: #D0CFC8;
   --border-dark: rgba(255, 255, 255, 0.1);
 
-  /* Accent — Electric Violet */
-  --accent: #6366F1;
-  --accent-bright: #818CF8;
-  --accent-soft: #EEF2FF;
-  --accent-dark: #4338CA;
+  /* ─── Accent — monochrome dominant + 1 hot ──── */
+  --accent: #1B1B1F;            /* nearly-black for primary CTAs */
+  --accent-soft: #F2F1ED;
+  --accent-hot: #FF3D2E;        /* one strong color (Stripe-red-ish) */
+  --accent-hot-soft: #FFE9E6;
 
-  /* Secondary accents */
+  /* Legacy names kept so existing module CSS still resolves until refactored */
+  --accent-bright: #2C2C33;
+  --accent-dark: #0A0A0F;
   --amber: #F59E0B;
   --amber-soft: #FEF3C7;
   --lime: #84CC16;
-  --rose: #F43F5E;
+  --rose: #FF3D2E;
 
-  /* Spacing rhythm */
-  --section-gap: clamp(80px, 12vw, 160px);
-  --container-max: 1240px;
+  /* ─── Spacing rhythm ─────────────────────────── */
+  --section-gap: clamp(96px, 14vw, 200px);
+  --container-max: 1280px;
   --container-pad: clamp(20px, 4vw, 40px);
 
-  /* Border radius */
+  /* ─── Border radius ──────────────────────────── */
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 24px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
   --radius-pill: 100px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
-  --shadow-elevated: 0 30px 80px rgba(99, 102, 241, 0.12), 0 10px 30px rgba(0, 0, 0, 0.08);
+  /* ─── Shadows — layered depth ────────────────── */
+  --shadow-sm:        0 1px 2px rgba(10,10,15,0.04);
+  --shadow-md:        0 4px 12px rgba(10,10,15,0.06), 0 1px 3px rgba(10,10,15,0.04);
+  --shadow-lg:        0 24px 48px -12px rgba(10,10,15,0.12), 0 8px 16px -8px rgba(10,10,15,0.08);
+  --shadow-xl:        0 48px 96px -24px rgba(10,10,15,0.18), 0 16px 32px -16px rgba(10,10,15,0.10);
+  --shadow-elevated:  0 32px 80px -24px rgba(10,10,15,0.20), 0 12px 24px -12px rgba(10,10,15,0.10);
 
-  /* Transitions */
-  --transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  /* ─── Type tokens ────────────────────────────── */
+  --display-tracking: -0.045em;
+  --display-leading: 0.94;
+  --font-display-xl: clamp(2.6rem, 7vw, 6rem);
+  --font-display-lg: clamp(2.2rem, 5.5vw, 4.4rem);
+  --font-display-md: clamp(1.8rem, 4vw, 3.2rem);
+
+  /* ─── Transitions ────────────────────────────── */
+  --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 440ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -77,9 +90,9 @@ body {
   overflow-x: hidden;
 }
 
-/* ─── Aurora background ──────────────────────── */
-/* Fixed soft gradient that flows behind every section.
-   Cards still pop because they use --bg-card (solid white). */
+/* ─── Subtle warm-grain backdrop ─────────────── */
+/* Replaces the old rotating aurora — calm warm wash, no movement.
+   Premium feel, doesn't fight content. */
 
 body::before {
   content: '';
@@ -88,34 +101,13 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(900px 700px at 85% 8%, rgba(236, 72, 153, 0.22), transparent 60%),
-    radial-gradient(800px 650px at 15% 25%, rgba(99, 102, 241, 0.20), transparent 60%),
-    radial-gradient(1000px 800px at 70% 80%, rgba(14, 165, 233, 0.18), transparent 60%),
-    radial-gradient(700px 600px at 25% 95%, rgba(168, 85, 247, 0.16), transparent 60%),
+    radial-gradient(900px 600px at 88% 6%, rgba(255, 61, 46, 0.04), transparent 60%),
+    radial-gradient(700px 600px at 10% 22%, rgba(27, 27, 31, 0.04), transparent 60%),
     var(--bg);
-  filter: saturate(1.05);
-  animation: aurora-drift 28s ease-in-out infinite alternate;
-}
-
-@keyframes aurora-drift {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-    filter: saturate(1.05) hue-rotate(0deg);
-  }
-  50% {
-    transform: translate3d(-1.5%, 1%, 0) scale(1.04);
-    filter: saturate(1.15) hue-rotate(8deg);
-  }
-  100% {
-    transform: translate3d(1.5%, -1%, 0) scale(1.02);
-    filter: saturate(1.1) hue-rotate(-6deg);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body::before {
-    animation: none;
-  }
+  body::before { animation: none; }
 }
 
 a {
@@ -124,12 +116,9 @@ a {
   transition: opacity var(--transition);
 }
 
-a:hover {
-  opacity: 0.7;
-}
+a:hover { opacity: 0.7; }
 
-img,
-svg {
+img, svg {
   display: block;
   max-width: 100%;
 }
@@ -142,16 +131,14 @@ button {
   color: inherit;
 }
 
-input,
-textarea,
-select {
+input, textarea, select {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
 }
 
 ::selection {
-  background: var(--accent);
+  background: var(--ink);
   color: var(--bg);
 }
 
@@ -169,10 +156,14 @@ select {
 .display {
   font-family: var(--font-inter), 'Inter', sans-serif;
   font-weight: 800;
-  letter-spacing: -2.5px;
-  line-height: 0.95;
+  letter-spacing: var(--display-tracking);
+  line-height: var(--display-leading);
   color: var(--ink);
 }
+
+.display-xl { font-size: var(--font-display-xl); font-weight: 800; letter-spacing: var(--display-tracking); line-height: var(--display-leading); }
+.display-lg { font-size: var(--font-display-lg); font-weight: 800; letter-spacing: var(--display-tracking); line-height: var(--display-leading); }
+.display-md { font-size: var(--font-display-md); font-weight: 800; letter-spacing: var(--display-tracking); line-height: var(--display-leading); }
 
 .eyebrow {
   display: inline-flex;
@@ -180,13 +171,13 @@ select {
   gap: 8px;
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
   color: var(--ink-muted);
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .gradient-text {
-  background: linear-gradient(120deg, var(--accent) 0%, var(--accent-bright) 50%, var(--accent) 100%);
+  background: linear-gradient(120deg, var(--ink) 0%, var(--accent-hot) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -200,19 +191,26 @@ select {
   align-items: center;
   gap: 8px;
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--ink);
   padding: 8px 16px;
   border-radius: var(--radius-pill);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.3px;
+  border: 1px solid var(--border);
 }
 
 .pill-dot {
   width: 6px;
   height: 6px;
-  background: var(--accent);
+  background: var(--accent-hot);
   border-radius: 50%;
+}
+
+.pill-hot {
+  background: var(--accent-hot-soft);
+  color: var(--accent-hot);
+  border-color: transparent;
 }
 
 /* ─── Card ───────────────────────────────────── */
@@ -242,34 +240,39 @@ select {
 .btn-primary {
   background: var(--ink);
   color: var(--bg);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
   background: var(--ink-soft);
   opacity: 1;
   transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
 }
 
 .btn-secondary {
-  background: transparent;
+  background: var(--bg-card);
   color: var(--ink);
   border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary:hover {
   background: var(--bg-card);
   border-color: var(--ink);
   opacity: 1;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-accent {
-  background: var(--accent);
+  background: var(--accent-hot);
   color: var(--bg);
 }
 
 .btn-accent:hover {
-  background: var(--accent-dark);
-  opacity: 1;
+  background: var(--accent-hot);
+  opacity: 0.92;
   transform: translateY(-1px);
 }
 
@@ -321,26 +324,41 @@ section {
 }
 
 .btn-glow:hover::after {
-  opacity: 0.45;
+  opacity: 0.35;
 }
 
 /* ─── Gradient number text ───────────────────── */
 
 .gradient-number {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-bright) 100%);
+  background: linear-gradient(135deg, var(--ink) 0%, var(--accent-hot) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* ─── Surface utilities ──────────────────────── */
+
+.surface-elevated {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.surface-dark {
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+  border-radius: var(--radius-xl);
 }
 
 /* ─── Mobile ─────────────────────────────────── */
 
 @media (max-width: 768px) {
   :root {
-    --section-gap: clamp(60px, 12vw, 100px);
+    --section-gap: clamp(72px, 14vw, 120px);
   }
 
   .display {
-    letter-spacing: -1.5px;
+    letter-spacing: -0.035em;
   }
 }

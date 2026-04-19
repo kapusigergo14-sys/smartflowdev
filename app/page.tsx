@@ -23,7 +23,7 @@ export default function HomePage() {
       <Footer />
       <ChatWidget
         practiceName="smartflowdev"
-        accentColor="#6366F1"
+        accentColor="#1B1B1F"
         welcomeMessage="Hi! 👋 I'm the smartflowdev assistant. Ask me about what we build, our process, timelines, or how to start a project."
         quickReplies={[
           'What do you build?',
