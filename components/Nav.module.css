@@ -1,11 +1,13 @@
 .nav {
   position: fixed;
-  top: 0;
+  /* Slides down when <OfferTopBar /> sets --topbar-h on <html>.
+     Default 0 means nav hugs the top when no banner is shown. */
+  top: var(--topbar-h, 0px);
   left: 0;
   right: 0;
   z-index: 100;
   padding: 20px 0;
-  transition: background 300ms ease, backdrop-filter 300ms ease, padding 300ms ease, border-color 300ms ease;
+  transition: top 220ms ease, background 300ms ease, backdrop-filter 300ms ease, padding 300ms ease, border-color 300ms ease;
   border-bottom: 1px solid transparent;
 }
 
