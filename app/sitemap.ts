@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://smartflowdev.com';
   const lastModified = new Date();
-  const routes = ['', '/chatbot', '/lawyer', '/plumber', '/hvac', '/phone-agent', '/proposal'];
+  const routes = ['', '/chatbot', '/lawyer', '/plumber', '/hvac', '/redesign', '/phone-agent', '/proposal'];
   return routes.map((path) => ({
     url: base + path,
     lastModified,
