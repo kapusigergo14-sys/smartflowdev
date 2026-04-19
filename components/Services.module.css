@@ -40,7 +40,9 @@
 }
 
 .pillar:hover {
-  background: var(--bg-card);
+  /* Semi-transparent so the shader gradient still breathes through on
+     hover — solid white used to blank the row entirely. */
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .pillarLeft {
