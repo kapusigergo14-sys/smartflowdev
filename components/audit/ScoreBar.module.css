@@ -1,5 +1,7 @@
 .wrap {
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: clamp(24px, 3vw, 32px);

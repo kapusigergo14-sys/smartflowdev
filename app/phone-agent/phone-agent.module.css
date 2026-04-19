@@ -72,6 +72,8 @@
 
 .howSection {
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }

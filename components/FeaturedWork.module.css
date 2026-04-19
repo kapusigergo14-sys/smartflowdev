@@ -33,6 +33,8 @@
 .frame {
   position: relative;
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -201,6 +203,8 @@
   gap: 24px;
   padding: 24px 32px;
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   border-top: 1px solid var(--border);
   flex-wrap: wrap;
 }

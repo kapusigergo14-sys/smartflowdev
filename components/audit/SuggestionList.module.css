@@ -12,6 +12,8 @@
   gap: 20px;
   padding: 22px 24px;
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   transition: var(--transition);

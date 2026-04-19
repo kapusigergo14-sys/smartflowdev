@@ -118,6 +118,8 @@
   border-radius: var(--radius-md);
   padding: 22px 24px;
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   transition: var(--transition);
 }
 

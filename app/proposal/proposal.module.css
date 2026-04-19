@@ -102,6 +102,8 @@
   align-items: center;
   gap: 4px;
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 20px 32px;

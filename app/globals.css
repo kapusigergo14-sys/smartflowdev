@@ -1,9 +1,10 @@
 :root {
   /* ─── Surfaces ───────────────────────────────── */
-  --bg: #FAFAF7;          /* warm white — Stripe-like */
-  --bg-card: #FFFFFF;
-  --bg-elevated: #FFFFFF;
-  --bg-subtle: #F2F1ED;
+  --bg: #FAFAF7;                                    /* warm white — Stripe-like */
+  --bg-card: rgba(255, 255, 255, 0.70);             /* translucent so the shader breathes through */
+  --bg-elevated: rgba(255, 255, 255, 0.88);         /* for high-contrast cards (modals, form hosts) */
+  --bg-subtle: rgba(242, 241, 237, 0.55);
+  --card-blur: blur(14px);                          /* companion to --bg-card */
   --bg-dark: #0A0A0F;
   --bg-dark-2: #1B1B1F;
 
@@ -205,6 +206,8 @@ input, textarea, select {
 
 .card {
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   transition: var(--transition);
@@ -328,6 +331,8 @@ section {
 
 .surface-elevated {
   background: var(--bg-elevated);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);

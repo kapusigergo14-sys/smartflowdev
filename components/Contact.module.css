@@ -51,6 +51,8 @@
   gap: 16px;
   padding: 18px 22px;
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   text-decoration: none;
@@ -153,6 +155,8 @@ a.metaCard:hover .metaArrow {
 
 .card {
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-elevated);
@@ -244,6 +248,8 @@ a.metaCard:hover .metaArrow {
 .select:focus {
   border-color: var(--accent);
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
 }
 
@@ -390,6 +396,8 @@ a.metaCard:hover .metaArrow {
 
 .successBack:hover {
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   border-color: var(--ink);
   color: var(--ink);
 }

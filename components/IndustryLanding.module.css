@@ -17,6 +17,8 @@
   align-items: center;
   gap: 10px;
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   border: 1px solid var(--border);
   color: var(--ink-soft);
   padding: 9px 16px;
@@ -94,6 +96,8 @@
 
 .btnSecondary {
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   color: var(--ink);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
@@ -140,6 +144,8 @@
 
 .serviceCard {
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   padding: 40px 36px;
@@ -308,6 +314,8 @@
 
 .priceCard {
   background: var(--bg-card);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   padding: 40px 32px;
