@@ -21,13 +21,13 @@ export default function Footer() {
           <div className={styles.linksGrid}>
             <div className={styles.linkCol}>
               <h4>Studio</h4>
-              <a href="#work">Work</a>
-              <a href="#services">Services</a>
-              <a href="#about">About</a>
+              <a href="/#work">Work</a>
+              <a href="/#services">Services</a>
+              <a href="/#about">About</a>
             </div>
             <div className={styles.linkCol}>
               <h4>Connect</h4>
-              <a href="#contact">Contact</a>
+              <a href="/#contact">Contact</a>
               <a href="mailto:geri@smartflowdev.com">Email</a>
               <a href="https://twitter.com/smartflowdev" target="_blank" rel="noopener noreferrer">Twitter</a>
               <a href="https://github.com/smartflowdev" target="_blank" rel="noopener noreferrer">GitHub</a>
