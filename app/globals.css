@@ -74,10 +74,14 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  /* Fallback colour before the shader canvas mounts (and the permanent
+     backdrop on mobile / reduced-motion where the shader is disabled). */
+  background: var(--bg);
 }
 
 body {
-  background: var(--bg);
+  /* Transparent so <SiteBackground /> at z-index:-1 stays visible. */
+  background: transparent;
   color: var(--ink);
   font-family: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
@@ -90,25 +94,9 @@ body {
   overflow-x: hidden;
 }
 
-/* ─── Subtle warm-grain backdrop ─────────────── */
-/* Replaces the old rotating aurora — calm warm wash, no movement.
-   Premium feel, doesn't fight content. */
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(900px 600px at 88% 6%, rgba(255, 61, 46, 0.04), transparent 60%),
-    radial-gradient(700px 600px at 10% 22%, rgba(27, 27, 31, 0.04), transparent 60%),
-    var(--bg);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body::before { animation: none; }
-}
+/* The animated shader gradient is rendered by <SiteBackground /> at root
+   layout level and sits behind body at z-index: -1. No ::before backdrop
+   needed — the html bg fallback handles the pre-hydration paint. */
 
 a {
   color: inherit;
