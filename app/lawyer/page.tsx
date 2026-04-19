@@ -411,7 +411,7 @@ export default function LawyerPage() {
               <ScrollReveal delay={200}>
                 <div className={`${s.priceCard}`}>
                   <h3 className={`${s.planName} ${s.planNameAccent}`}>Premium</h3>
-                  <div className={`${s.planPrice} gradient-text`}><DiscountPrice amount={1900} /></div>
+                  <div className={s.planPrice}><DiscountPrice amount={1900} /></div>
                   <div className={s.planPriceLabel}>one-time setup</div>
                   <div className={s.planMonthly}>+$129 <span>/month</span></div>
                   <div className={s.planMonthlyLabel}>support, hosting &amp; updates</div>
