@@ -11,17 +11,19 @@ import {
 import styles from './OfferCountdown.module.css';
 
 /**
- * 72-hour exclusive-offer countdown. First visit seeds localStorage with
+ * 7-day exclusive-offer countdown. First visit seeds localStorage with
  * the visitor's own t0; every subsequent page load / route change reads
  * the same t0 back so the clock stays honest across the site.
  *
  * If the visitor clears localStorage we just start a new window — a
  * deterministic server-issued offer would need to live behind a URL
  * param, which is out of scope here.
+ *
+ * 2026-04-23 — extended from 72h to 7d for week-long re-engagement push.
  */
 
-const OFFER_KEY = 'sfd_offer_t0';
-const OFFER_WINDOW_MS = 72 * 60 * 60 * 1000;
+const OFFER_KEY = 'sfd_offer_t0_wk1';
+const OFFER_WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
 const DISCOUNT_PCT = 50;
 
 interface OfferState {
@@ -57,10 +59,15 @@ export function useOffer(): OfferState {
 function fmt(msLeft: number): string {
   if (msLeft <= 0) return '';
   const totalSec = Math.floor(msLeft / 1000);
-  const h = Math.floor(totalSec / 3600);
+  const d = Math.floor(totalSec / 86400);
+  const h = Math.floor((totalSec % 86400) / 3600);
   const m = Math.floor((totalSec % 3600) / 60);
   const s = totalSec % 60;
-  return `${String(h).padStart(2, '0')}h ${String(m).padStart(2, '0')}m ${String(s).padStart(2, '0')}s`;
+  const pad = (n: number) => String(n).padStart(2, '0');
+  // Only show days when at least 1 day left, otherwise HH:MM:SS fits all the
+  // seven-day window tail-end gracefully.
+  if (d > 0) return `${d}d ${pad(h)}h ${pad(m)}m ${pad(s)}s`;
+  return `${pad(h)}h ${pad(m)}m ${pad(s)}s`;
 }
 
 export function OfferProvider({ children }: { children: ReactNode }) {

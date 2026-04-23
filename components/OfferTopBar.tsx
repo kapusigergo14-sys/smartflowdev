@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import { useOffer } from './OfferCountdown';
 import styles from './OfferTopBar.module.css';
 
-const DISMISS_KEY = 'sfd_offer_topbar_dismissed';
+const DISMISS_KEY = 'sfd_offer_topbar_dismissed_wk1';
 
 /**
- * Site-wide sticky offer banner rendered above <Nav /> when the 72h
+ * Site-wide sticky offer banner rendered above <Nav /> when the 7-day
  * countdown is live. Click "Claim it" scrolls to #pricing on the
  * current page (or navigates to /#pricing from sub-pages without one).
  * "×" dismisses for the rest of the localStorage session.
